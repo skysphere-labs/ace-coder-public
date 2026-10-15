@@ -586,7 +586,7 @@ function createRemoteServer({
     // Private service routes stay unavailable even if a legacy store exposes
     // a similarly named method. Pairing remains mandatory for every API call.
     if (
-      /^(tickets|controlPlane|cloudflare|remoteCloudflare|remoteSetCloudflare|setRemoteCloudflare)/i.test(String(method)) ||
+      /^(tickets|teamTickets|controlPlane|cloudflare|remoteCloudflare|remoteSetCloudflare|setRemoteCloudflare)/i.test(String(method)) ||
       /^update(GetStatus|Check|Download|Install|SetChannel|SetAutoCheck)$/.test(String(method))
     ) {
       const error: any = new Error('This service is not available in ACE CODER.');

@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Search, FolderOpen, Settings, Plug,
-  Plus, MessageSquare,
+  Plus, MessageSquare, Ticket,
 } from 'lucide-react';
 import { useApp } from '../store';
 
@@ -10,6 +10,7 @@ const COMMANDS = [
   { id: 'home', icon: FolderOpen, label: 'Go to Home', group: 'Navigation' },
   { id: 'settings', icon: Settings, label: 'Open Settings', group: 'Navigation', shortcut: '⌘,' },
   { id: 'plugins', icon: Plug, label: 'Plugins', group: 'Navigation' },
+  { id: 'tickets', icon: Ticket, label: 'Tickets · Jira and team boards', group: 'Navigation' },
   { id: 'new-task', icon: Plus, label: 'New Task', group: 'Actions', shortcut: '⌘N' },
   { id: 'new-thread', icon: MessageSquare, label: 'New Thread', group: 'Actions' },
 ];
@@ -51,6 +52,7 @@ export function QuickLauncher() {
       case 'home': setView('home'); break;
       case 'settings': setView('settings'); break;
       case 'plugins': setView('plugins'); break;
+      case 'tickets': setView('tickets'); break;
       case 'new-task':
       case 'new-thread':
         setView(activeWorkspaceId ? 'new-chat' : 'home');

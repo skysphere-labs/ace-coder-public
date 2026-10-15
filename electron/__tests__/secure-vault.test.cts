@@ -54,6 +54,26 @@ function poisonedSafeStorage() {
   };
 }
 
+test('external integration vault requires OS encryption even on macOS', () => {
+  const storage = fakeSafeStorage('keychain');
+  const encrypt = vi.spyOn(storage, 'encryptString');
+  const vault = createSecureVault({ userDataPath: tmp, safeStorage: storage, platform: 'darwin', requireOsEncryption: true, filename: 'team-tickets-vault.json' });
+  vault.setSecret('team-tickets:demo', 'synthetic-test-token');
+  expect(encrypt).toHaveBeenCalledOnce();
+  expect(vault.status()).toMatchObject({ available: true, backend: 'keychain' });
+  expect(vault.getSecret('team-tickets:demo')).toBe('synthetic-test-token');
+  expect(fs.existsSync(path.join(tmp, LOCAL_KEY_FILENAME))).toBe(false);
+});
+
+test('required OS encryption never falls back to a local key or plaintext', () => {
+  for (const storage of [{ isEncryptionAvailable: () => false }, fakeSafeStorage('basic_text')]) {
+    const vault = createSecureVault({ userDataPath: tmp, safeStorage: storage, platform: 'darwin', requireOsEncryption: true });
+    expect(() => vault.setSecret('team-tickets:demo', 'synthetic-test-token')).toThrow();
+    expect(fs.existsSync(vault.filePath)).toBe(false);
+    expect(fs.existsSync(path.join(tmp, LOCAL_KEY_FILENAME))).toBe(false);
+  }
+});
+
 test('encrypted vault round-trips without persisting plaintext and uses mode 0600', () => {
   const vault = safeStorageVault(fakeSafeStorage());
   const secret = 'plane_api_1234567890abcdef1234567890abcdef';

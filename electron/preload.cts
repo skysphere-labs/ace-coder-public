@@ -1,6 +1,13 @@
 const { contextBridge, ipcRenderer, webUtils } = require('electron');
 
 const channels: any = {
+  teamTicketsList: 'ace:team-tickets-list',
+  teamTicketsSave: 'ace:team-tickets-save',
+  teamTicketsDelete: 'ace:team-tickets-delete',
+  teamTicketsSearch: 'ace:team-tickets-search',
+  teamTicketsGet: 'ace:team-tickets-get',
+  teamTicketsAgents: 'ace:team-tickets-agents',
+  teamTicketsLaunch: 'ace:team-tickets-launch',
   getState: 'ace:get-state',
   seedState: 'ace:seed-state',
   perfHealth: 'ace:perf-health',

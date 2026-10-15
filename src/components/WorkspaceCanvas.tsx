@@ -19,6 +19,9 @@ const PluginsScreen = lazy(() =>
 const GithubScreen = lazy(() =>
   import('./GithubScreen').then((module) => ({ default: module.GithubScreen }))
 );
+const TeamTicketsScreen = lazy(() =>
+  import('./TeamTicketsScreen').then((module) => ({ default: module.TeamTicketsScreen }))
+);
 const RemoteScreen = lazy(() =>
   import('./RemoteScreen').then((module) => ({ default: module.RemoteScreen }))
 );
@@ -74,6 +77,7 @@ export function WorkspaceCanvas({ mobile = false }: { mobile?: boolean } = {}) {
   if (view === 'settings') return <CanvasLoader><PreferencesScreen /></CanvasLoader>;
   if (view === 'plugins') return <CanvasLoader><PluginsScreen /></CanvasLoader>;
   if (view === 'github') return <CanvasLoader><GithubScreen /></CanvasLoader>;
+  if (view === 'tickets') return <CanvasLoader><TeamTicketsScreen /></CanvasLoader>;
   // 'github-browser' is rendered as a persistent overlay from DesktopShell so
   // the <webview> survives view switches without reloading.
   if (view === 'github-browser') return <div className="h-full w-full" />;

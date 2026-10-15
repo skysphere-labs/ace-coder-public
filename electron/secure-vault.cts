@@ -234,14 +234,16 @@ function createLocalKeyCipher(keyPath: string) {
   };
 }
 
-function createSecureVault({ userDataPath, safeStorage, filename, platform = process.platform }: any) {
+function createSecureVault({ userDataPath, safeStorage, filename, platform = process.platform, requireOsEncryption = false }: any) {
   if (!userDataPath || typeof userDataPath !== 'string') {
     throw new Error('createSecureVault: userDataPath required');
   }
   // Keychain-free entry: darwin selects the local-file cipher unconditionally
   // and must never call INTO safeStorage — even isEncryptionAvailable() walks
   // into the Keychain to provision the encryption key.
-  const localBackend = platform === 'darwin';
+  // New external-service credentials can require OS encryption on every
+  // platform. They must never inherit the legacy macOS local-key fallback.
+  const localBackend = platform === 'darwin' && !requireOsEncryption;
   const filePath = path.join(userDataPath, filename ?? (localBackend ? LOCAL_FILENAME : DEFAULT_FILENAME));
   const localCipher = localBackend
     ? createLocalKeyCipher(path.join(userDataPath, LOCAL_KEY_FILENAME))

@@ -7,7 +7,7 @@ public-edition source. Availability also depends on your operating system,
 installed CLIs, accounts, and configuration.
 
 Explore the [screenshot tour](screenshots/README.md) for a visual walkthrough
-covering all 18 capability groups. The images use fictional demo data; the
+covering all 19 capability groups. The images use fictional demo data; the
 coverage table distinguishes captured interface views from native or CLI
 behavior that was not exercised by the showcase.
 
@@ -125,6 +125,28 @@ as part of the integration workflow.
 Those checks make integration decisions inspectable; they do not guarantee
 that a change is correct or secure. Your GitHub permissions and repository
 branch rules still apply. GitHub sign-in is optional for local-only work.
+
+## Jira and in-house team tickets
+
+Connect Jira Cloud with your own email/API token, Jira Data Center with a PAT,
+or a JSON ticket service with optional Bearer authentication. Save multiple
+connections, search by JQL or your service's query, page through results, and
+read the ticket's normalized text before choosing what to run.
+
+Select a local project and an eligible installed agent, optionally add your
+instruction, then launch the reviewed snapshot in a Git worktree or the project
+directory. The app starts the CLI and submits the context once it is ready.
+If provider login or setup blocks delivery, the created task still opens and
+keeps the context in Task spec for you to send after setup. Launch previews
+expire after ten minutes and are single-use. Refresh before launching again.
+
+Tokens remain in OS-encrypted desktop storage and are excluded from the prompt.
+The ticket connector performs no board writeback and is unavailable to paired
+remote clients. ACE does not enable permission bypass for these tasks; profiles
+that always bypass permission prompts are excluded. Provider configuration and
+data-sharing rules still apply. This is not a sandbox or a Jira Marketplace
+integration. See the [setup and JSON API guide](TEAM-TICKETS.md), including the
+Jira Cloud personal/internal-use scope and distributed-app requirements.
 
 ## Task-scoped browser workspace
 

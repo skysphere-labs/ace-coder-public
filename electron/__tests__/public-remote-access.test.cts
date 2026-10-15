@@ -24,7 +24,7 @@ function fixture(mode = 'loopback', port = 9419) {
     touchRemoteDevice: () => {},
     listRemoteDevices: () => devices,
   };
-  for (const method of ['ticketsStart', 'updateInstall', 'cloudflareInventory', 'setRemoteCloudflareConfig']) {
+  for (const method of ['ticketsStart', 'teamTicketsList', 'teamTicketsSave', 'teamTicketsGet', 'teamTicketsSearch', 'teamTicketsAgents', 'teamTicketsLaunch', 'teamTicketsDelete', 'updateInstall', 'cloudflareInventory', 'setRemoteCloudflareConfig']) {
     store[method] = () => { privateCalls += 1; };
   }
   return { server: createRemoteServer({ aceStore: store }), settings, devices, privateCalls: () => privateCalls };
@@ -96,7 +96,7 @@ test('paired remote API preserves authorization while refusing removed private c
   assert.equal(status.status, 200);
   assert.equal('cloudflareDomain' in status.body.result, false);
   assert.equal('serverSecret' in status.body.result, false);
-  for (const method of ['ticketsStart', 'updateInstall', 'cloudflareInventory', 'setRemoteCloudflareConfig']) {
+  for (const method of ['ticketsStart', 'teamTicketsList', 'teamTicketsSave', 'teamTicketsGet', 'teamTicketsSearch', 'teamTicketsAgents', 'teamTicketsLaunch', 'teamTicketsDelete', 'updateInstall', 'cloudflareInventory', 'setRemoteCloudflareConfig']) {
     assert.equal((await request(port, `/api/${method}`, {}, token)).status, 404);
   }
   assert.equal(privateCalls(), 0);

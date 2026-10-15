@@ -1,4 +1,4 @@
-import { Home, Plug, Wifi, Repeat, Radar, Gauge, BookOpen } from 'lucide-react';
+import { Home, Plug, Wifi, Repeat, Radar, Gauge, BookOpen, Ticket } from 'lucide-react';
 import type { View } from '../store';
 import { GithubGlyph } from './ui/github-glyph';
 
@@ -22,4 +22,5 @@ export const NAV_ITEMS: { id: View; icon: typeof Home; label: string }[] = [
   { id: 'monitor', icon: Gauge, label: 'Monitor' },
   { id: 'knowledge', icon: BookOpen, label: 'Knowledge' },
   { id: 'github', icon: GithubGlyph, label: 'GitHub' },
+  { id: 'tickets', icon: Ticket, label: 'Tickets' },
 ];

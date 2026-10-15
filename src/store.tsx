@@ -30,6 +30,7 @@ export type View =
   | 'new-remote'
   | 'plugins'
   | 'github'
+  | 'tickets'
   | 'github-browser'
   | 'remote'
   | 'hermes'
@@ -58,6 +59,7 @@ const PERSISTED_VIEWS: ReadonlySet<View> = new Set<View>([
   'lane-deck',
   'plugins',
   'github',
+  'tickets',
   'github-browser',
   'remote',
   'hermes',

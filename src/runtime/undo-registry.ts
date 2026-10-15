@@ -42,7 +42,7 @@ const toastStore = createSnapshotStore<ToastState>(null);
 let toastTimer: ReturnType<typeof setTimeout> | null = null;
 let toastSeq = 0;
 
-function showToast(message: string, action?: ToastAction): void {
+export function showToast(message: string, action?: ToastAction): void {
   if (toastTimer) clearTimeout(toastTimer);
   toastSeq += 1;
   toastStore.setSnapshot({ id: toastSeq, message, action });

@@ -1,7 +1,7 @@
 {
   "name": "ace-coder",
   "productName": "ACE CODER",
-  "description": "Skysphere ACE CODER: a desktop workspace for orchestrating AI coding agents, isolated worktrees, run boards, reusable loops, and local knowledge.",
+  "description": "Skysphere ACE CODER: connect Jira and team tickets to AI coding agents, isolated worktrees, run boards, reusable loops, and local knowledge.",
   "author": "Skysphere Labs",
   "private": true,
   "version": "0.1.0",
@@ -13,6 +13,7 @@
   },
   "scripts": {
     "dev": "tsx scripts/dev.cts",
+    "test:tickets": "npm run build:electron-main && vitest run electron/__tests__/team-tickets.test.ts electron/__tests__/team-ticket-launch.test.cts electron/__tests__/team-ticket-local-core.test.cts electron/__tests__/secure-vault.test.cts electron/__tests__/task-spec.test.cts src/components/TeamTicketsScreen.test.tsx && vitest run electron/__tests__/task-spec-sidecar.test.cts -t \"external ticket prompt\" && node --test --require tsx/cjs electron/__tests__/public-remote-access.test.cts",
     "dev:web": "vite",
     "dev:electron": "electron .",
     "dev:remote": "cross-env ACE_REMOTE_DEV=1 tsx scripts/dev.cts",

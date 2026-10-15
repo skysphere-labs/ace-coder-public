@@ -91,6 +91,8 @@ references/
 .cloudflare/
 credentials/
 secrets/
+team-tickets.json
+team-tickets-vault.json*
 
 # Remote helper binaries are built locally from the Go source.
 electron/bin/ace-coder-daemon-*

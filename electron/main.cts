@@ -1,4 +1,4 @@
-const { app, BrowserWindow, dialog, ipcMain, Menu, nativeImage, powerSaveBlocker, screen, session, shell } = require('electron');
+const { app, BrowserWindow, dialog, ipcMain, Menu, nativeImage, powerSaveBlocker, safeStorage, screen, session, shell } = require('electron');
 const path = require('path');
 const fs = require('fs');
 const { createRuntimeBoot } = require('./runtime-boot.cjs');
@@ -11,6 +11,8 @@ const { createCompactionController } = require('./orchestrator-compaction.cjs');
 const { createBrowserController } = require('./browser-control.cjs');
 const cliInstaller = require('./cli-installer.cjs');
 const { createGithubCore } = require('./github-core.cjs');
+const { createTeamTickets } = require('./team-tickets.cts');
+const { createTeamTicketHandlers, isTrustedTicketSender } = require('./team-ticket-launch.cts');
 const {
   scheduleOpsStatusSnapshot: scheduleOpsStatusSnapshotDaily,
 } = require('./mission-archive-scheduler.cjs');
@@ -443,6 +445,32 @@ function registerHandlers() {
     ipcMain.handle(channel, listener);
     runtimeIpcChannels.add(channel);
   };
+
+  // Deliberately outside aceStore: neither the paired remote API nor the agent
+  // socket bridge can configure integrations or use their credentials.
+  const teamTickets = createTeamTicketHandlers({
+    service: createTeamTickets({ userDataPath: app.getPath('userData'), safeStorage }),
+    store: s,
+  });
+  const ticketRendererUrl = isDev
+    ? process.env.VITE_DEV_SERVER_URL || 'http://localhost:5173'
+    : require('node:url').pathToFileURL(path.join(__dirname, '..', 'dist', 'index.html')).href;
+  for (const [channel, action] of Object.entries({
+    'ace:team-tickets-list': teamTickets.listConnections,
+    'ace:team-tickets-save': teamTickets.saveConnection,
+    'ace:team-tickets-delete': (input: any) => teamTickets.deleteConnection(input?.id),
+    'ace:team-tickets-search': teamTickets.searchTickets,
+    'ace:team-tickets-get': teamTickets.getTicket,
+    'ace:team-tickets-agents': teamTickets.getLaunchAgents,
+    'ace:team-tickets-launch': teamTickets.launch,
+  })) {
+    handle(channel, (event: any, input: any) => {
+      if (!BrowserWindow.fromWebContents(event.sender) || !isTrustedTicketSender(event, ticketRendererUrl)) {
+        throw new Error('Ticket connections are available only in the local desktop application.');
+      }
+      return (action as any)(input);
+    });
+  }
 
   handle('ace:get-state', () => s.getState());
   handle('ace:seed-state', () => s.seedState());

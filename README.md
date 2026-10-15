@@ -25,7 +25,7 @@ Pull requests and contributions to this release mirror are not accepted.
 ## From a task to a reviewed change
 
 1. **Bring a repository.** Open a local project or clone through your GitHub account.
-2. **Choose the work.** Start a task, pick an agent, and use a dedicated worktree when the change needs its own branch.
+2. **Choose the work.** Start a task or review a ticket from Jira or your in-house board, pick an agent, and use a dedicated worktree when the change needs its own branch.
 3. **Work in parallel.** Arrange agent panes, open supporting terminals and files, or watch the whole workspace in the lane deck.
 4. **Steer as it runs.** Read live output, send follow-up instructions, respond to prompts, and inspect the recorded state.
 5. **Review the result.** Read the diff, stage files, commit, and use the GitHub integration workflow for pull requests and checks.
@@ -41,6 +41,7 @@ Pull requests and contributions to this release mirror are not accepted.
 | **Run Board** | A shared view of queued, active, review-ready, completed, and blocked work, backed by an append-only run ledger. |
 | **Reusable loops** | Saved workflows for build/review cycles, CI hardening, documentation sweeps, and dependency triage, with run history and stop conditions. |
 | **Git and GitHub** | File diffs, staging, commits, branch/worktree controls, repository browsing, pull requests, checks, and integration gates. |
+| **Jira and team tickets** | Connect Jira Cloud, Jira Data Center, or a JSON ticket service; search, preview, and launch reviewed ticket context in a local project with an eligible installed agent. |
 | **A complete task workbench** | Real PTY terminals, a Monaco file editor, task-scoped browser tabs, and split panes alongside your agents. |
 | **Skills and MCP** | Discover and manage skills, create local skills, and configure catalog or custom MCP servers for compatible providers. |
 | **Local knowledge** | Search project knowledge and wiki material, inspect freshness and trust labels, and explore linked pages in a graph. |
@@ -55,7 +56,7 @@ including provider differences, optional integrations, and current limits.
 
 These captures show the real interface with fictional local demo data. They
 illustrate the workflow and layout; the pictured activity is not a live agent
-run. The [complete screenshot tour](docs/screenshots/README.md) maps all 18
+run. The [complete screenshot tour](docs/screenshots/README.md) maps all 19
 capability groups to their captures or source and explains what was exercised.
 
 **Coordinate queued, active, and review-ready work from the Run Board.**
@@ -70,11 +71,21 @@ capability groups to their captures or source and explains what was exercised.
 
 ![Skysphere ACE CODER loops interface](docs/screenshots/loops.jpg)
 
+**Bring a ticket from your team's board into a reviewed coding workflow.**
+
+![Ticket search and preview with fictional Jira data](docs/screenshots/tickets.jpg)
+
 **Keep the conversation and tool results together in Hermes structured chat.**
 
 ![Hermes chat with fictional messages and an unsent draft](docs/screenshots/hermes-chat.jpg)
 
 ## Bring your preferred agents
+
+To bring work from an existing board, see the [Jira and team ticket setup guide](docs/TEAM-TICKETS.md).
+Ticket intake runs on the desktop with your own credentials and reads your
+board without changing tickets. You choose when to share the reviewed context
+with a coding agent. The Jira Cloud token flow is intended for personal/internal
+use; review Atlassian's distributed-app requirements before a public rollout.
 
 The provider catalog contains launch profiles for these **24 CLI agents**:
 

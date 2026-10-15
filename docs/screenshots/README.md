@@ -25,6 +25,7 @@ and the linked source below for behavior that a screenshot cannot establish.
 | **Transcript normalization and chat** | [Hermes chat](hermes-chat.jpg) | Markdown conversation, a fictional tool card, and a context indicator. Native transcript ingestion was not exercised; see [normalization adapters](../../electron/ace-control/transcript/normalize). Structured chat is currently enabled for Hermes, as defined in the [chat-mode registry](../../src/runtime/ace-chat-mode-registry.ts). |
 | **Rich chat composer** | [Hermes composer](hermes-composer.jpg), [chat with draft](hermes-chat.jpg) | Unsent draft, slash-command menu, and attachment control. Uploading or sending files to a provider was not exercised; see the [composer](../../src/components/ace-chat/ComposerShell.tsx). |
 | **Git and GitHub** | [GitHub](github.jpg), [workspace](workspace.jpg) | Repository/account presentation and task context using fictional data. Login, push, PR creation, and merge were not performed. |
+| **Jira and team tickets** | [Search/preview](tickets.jpg), [launch controls](tickets-launch.jpg), [Jira setup](tickets-jira-setup.jpg), [JSON board setup](tickets-json-setup.jpg) | Fictional search results and reviewed text, explicit project/agent selection, and unsaved setup forms with empty token fields. No Jira/API requests, secure-store writes, or provider execution were performed; see the [ticket guide](../TEAM-TICKETS.md). |
 | **Editor and task browser** | [Monaco editor](editor.jpg), [Markdown preview](editor-preview.jpg), [workspace](workspace.jpg) | Loaded editor and preview with synthetic file content. Saving files and native Electron browser/webview operations were not exercised; see [SessionScreen](../../src/components/SessionScreen.tsx). |
 | **Provider catalog** | [Providers](providers.jpg) | CLI configuration/discovery presentation. Demo installation indicators do not prove the CLIs are installed or authenticated. |
 | **Skills and MCP** | [Skills/plugins](plugins.jpg), [MCP](mcp.jpg) | Catalog and configuration surfaces. No third-party service was connected. |
@@ -56,6 +57,10 @@ and the linked source below for behavior that a screenshot cannot establish.
 
 ![Reusable loops interface](loops.jpg)
 
+![Ticket results and preview using fictional board data](tickets.jpg)
+
+![Explicit project and agent selection before launching a ticket](tickets-launch.jpg)
+
 ### Configure your tools
 
 ![Skills and plugins catalog](plugins.jpg)
@@ -65,6 +70,10 @@ and the linked source below for behavior that a screenshot cannot establish.
 ![Coding agent provider settings](providers.jpg)
 
 ![GitHub interface with fictional account and repository data](github.jpg)
+
+![Jira Cloud setup with unsaved fictional values and an empty token field](tickets-jira-setup.jpg)
+
+![In-house JSON board setup with unsaved fictional values and an empty token field](tickets-json-setup.jpg)
 
 ### Keep context and inspect state
 

@@ -1,7 +1,7 @@
 /**
  * Browser-only screenshot fixture entry. Start Vite on loopback and visit
  * /showcase.html?view=home (or workspaces, workspace, lane-deck, board, loops,
- * todos, plugins, github, remote, knowledge, monitor, intel, settings, setup,
+ * todos, plugins, github, tickets, remote, knowledge, monitor, intel, settings, setup,
  * hermes-chat, editor). Select README.md in the file panel to preview/edit it.
  * Vite's production entry is index.html; this file is never imported by it.
  * Every value below is fictional. No Electron preload, API, filesystem,
@@ -9,6 +9,7 @@
  */
 import { DEFAULT_OPERATORS } from './lib/operators';
 import type { Workspace, Task, RunLedgerCard, AgentId } from './lib/types';
+import type { TeamTicket, TeamTicketConnection } from './lib/team-tickets-types';
 import type { RendererLoopSpec, OpsTodo, StreamEntry, TerminalSyncPayload, StreamEventPayload } from './lib/ace-api';
 
 if (!import.meta.env.DEV || window.aceDesktop || !['localhost', '127.0.0.1', '[::1]'].includes(location.hostname)) {
@@ -122,6 +123,12 @@ const terminalText = (id: string) => {
 };
 const catalog = ['claude', 'codex', 'gemini', 'hermes'].map(id => ({ id, name: ({claude:'Claude Code',codex:'Codex',gemini:'Gemini CLI',hermes:'Hermes'})[id], label: id,
   installCommand: null, docUrl: null, status: id === 'hermes' && requested !== 'hermes-chat' ? 'missing' : 'available', launchable: id !== 'hermes' || requested === 'hermes-chat', executable: null, reason: 'Fictional showcase availability' }));
+const ticketConnections: TeamTicketConnection[] = [{ id: 'demo-jira', name: 'Observatory engineering', kind: 'jira-cloud', baseUrl: 'https://fictional-demo.atlassian.net', email: 'developer@example.com', cloudId: null, defaultQuery: 'project = DEMO ORDER BY updated DESC', hasToken: true }];
+const teamTickets: TeamTicket[] = [
+  { connectionId: 'demo-jira', id: 'demo-ticket-101', key: 'DEMO-101', title: 'Add keyboard navigation to command search', description: 'Make the command palette accessible without a mouse.\n\nAcceptance criteria\n• Arrow keys move through filtered results.\n• Enter opens the selected command.\n• Escape closes the palette and restores focus.\n• Add focused keyboard navigation checks.\n\nThis ticket is fictional showcase content. No board or agent is connected.', status: 'Ready', assignee: 'Demo Developer', labels: ['accessibility', 'frontend'], url: 'https://fictional-demo.atlassian.net/browse/DEMO-101', updatedAt: at },
+  { connectionId: 'demo-jira', id: 'demo-ticket-102', key: 'DEMO-102', title: 'Document the incremental index format', description: 'Prepare a short explanation of the fictional document index.', status: 'In progress', assignee: 'Demo Reviewer', labels: ['documentation'], url: null, updatedAt: at },
+  { connectionId: 'demo-jira', id: 'demo-ticket-103', key: 'DEMO-103', title: 'Add Markdown export examples', description: 'Show deterministic Markdown export in the fictional Field Notes guide.', status: 'Backlog', assignee: null, labels: ['export'], url: null, updatedAt: at },
+];
 const skills = [
   ['demo-test-review', 'Test review', 'Review focused regression checks and explain evidence.'],
   ['demo-docs-review', 'Documentation review', 'Turn feature changes into clear setup instructions.'],
@@ -168,6 +175,8 @@ const snapshots: Record<string, unknown> = {
   githubIsAvailable: { installed: true, version: 'Fictional gh fixture' }, githubRefreshAvailability: { installed: true },
   githubListAccounts: [{login:'fictional-demo',avatarUrl:null,isActive:true,name:'Demo Developer',bio:'Fictional account for ACE CODER screenshots.',htmlUrl:'https://example.invalid/demo',followers:42,following:12,publicRepos:2,location:null,company:null,blog:null}],
   githubListRepos: repos, githubListStars: [repos[0]], githubListTrending: {at:now,data:[]},
+  teamTicketsList: ticketConnections, teamTicketsAgents: catalog.filter(agent => agent.launchable && agent.id !== 'hermes'),
+  teamTicketsSearch: { tickets: teamTickets, nextCursor: null },
   githubFetchContributions: {total:128,year:2026,weeks:Array.from({length:26},(_,week)=>({days:Array.from({length:7},(_,day)=>({date:new Date(now-(182-week*7-day)*86400000).toISOString().slice(0,10),count:(week+day)%5,level:(week+day)%5}))}))},
   listTrackedGithubProjects: { projects: workspaces.map(ws => ({workspaceId:ws.id,workspaceName:ws.name,workspacePath:ws.path,isRemote:false,githubRepo:ws.githubRepo,githubUrl:`https://example.invalid/${ws.githubRepo}`,defaultBranch:'main',wikiPath:`${ws.path}/wiki/index.md`,wikiExists:true,activeTasks:ws.tasks,openPrs:[]})) },
   remoteGetStatus: remote, remoteListDevices: [], remoteDetectTunnels: [{id:'tailscale',name:'Tailscale',recommended:false,available:false,host:null}],
@@ -190,6 +199,11 @@ const snapshots: Record<string, unknown> = {
 async function invoke(method: string, payload: unknown): Promise<unknown> {
   const input = (payload ?? {}) as Record<string, string>;
   if (method in snapshots) return structuredClone(snapshots[method]);
+  if (method === 'teamTicketsGet') {
+    const ticket = teamTickets.find(item => item.connectionId === input.connectionId && item.key === input.key);
+    if (!ticket) throw new Error('Fictional showcase ticket not found.');
+    return { ...structuredClone(ticket), previewToken: 'fictional-preview-no-launch-authority' };
+  }
   if (method === 'loopsGet') return loops.find(l => l.id === input.id) ?? null;
   if (method === 'skillsGetDetail') return skills.find(s => s.id === input.skillId) ?? null;
   if (method === 'skillsSearch') return skills;
@@ -232,7 +246,7 @@ window.aceDesktop = new Proxy({ invoke }, {
   },
 }) as NonNullable<Window['aceDesktop']>;
 
-const views = ['home','today','workspaces','workspace','lane-deck','new-chat','new-remote','board','loops','todos','plugins','github','github-browser','remote','knowledge','monitor','intel','settings','setup'];
+const views = ['home','today','workspaces','workspace','lane-deck','new-chat','new-remote','board','loops','todos','plugins','github','tickets','github-browser','remote','knowledge','monitor','intel','settings','setup'];
 const view = requested === 'hermes-chat' || requested === 'editor' ? 'workspace' : views.includes(requested) ? requested : 'home';
 if (requested === 'hermes-chat') localStorage.setItem('ace:ace-chat-mode:hermes:variant:lane-release-review', 'chat');
 localStorage.setItem('ace:setup-v1', '1');

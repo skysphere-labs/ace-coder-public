@@ -8,6 +8,14 @@
 
 const fs = require('fs');
 
+// The ticket launcher adds this provenance marker before remote requirements.
+// Untrusted ticket text must not cause the sidecar to open local files, even
+// when it contains a valid GoalAgentSpec pointer or a quoted Markdown path.
+const EXTERNAL_TICKET_PROMPT_MARKER = '<!-- ace:external-ticket:v1 -->';
+function isExternalTicketPrompt(text: any) {
+  return String(text || '').trimStart().startsWith(EXTERNAL_TICKET_PROMPT_MARKER);
+}
+
 function splitSections(text: any) {
   // Matches top-level ATX headings: `# Goal`, `# Skills to load`, etc.
   // The framed prompt only uses level-1 headings; deeper ones are body.
@@ -140,6 +148,7 @@ function parseInitialPrompt(text: any) {
 //   2. "Complete the GoalAgentSpec at <path>." (Codex /goal)
 //   3. a bare absolute path ending in GOAL_AGENT_SPEC.md anywhere in the text
 function extractGoalSpecPath(text: any) {
+  if (isExternalTicketPrompt(text)) return null;
   const raw = String(text || '');
   if (!raw.trim()) return null;
   const readAndExecute = /Read and execute:\s*\n?\s*(\/[^\n\s]+\.md)\b/i.exec(raw);
@@ -154,6 +163,7 @@ function extractGoalSpecPath(text: any) {
 const PROMPT_MARKDOWN_MAX_SOURCES = 8;
 
 function extractPromptMarkdownPaths(text: any) {
+  if (isExternalTicketPrompt(text)) return [];
   const raw = String(text || '');
   if (!raw.trim()) return [];
   const matches = [];
@@ -252,8 +262,8 @@ function createGetTaskSpec({ stmts, db, workspaceMetaCache }: any) {
         prNumber = pr.number || null;
       }
     }
-    // Resolve prompt-referenced markdown fresh on every call — these files
-    // are durable task context and reopened tabs should reflect edits.
+    // Resolve trusted local prompt references fresh on every call. Both path
+    // extractors refuse external-ticket prompts; their raw text remains visible.
     const goalSpecPath = extractGoalSpecPath(task.initial_prompt);
     const goalSpecMarkdown = goalSpecPath ? readGoalSpecMarkdown(goalSpecPath) : null;
     const promptMarkdownSources = readPromptMarkdownSources(task.initial_prompt);

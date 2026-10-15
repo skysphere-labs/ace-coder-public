@@ -27,6 +27,10 @@ import type {
 
 import type { TaskSpecResult } from './task-spec';
 import type { OperatorsConfig } from './operators';
+import type {
+  TeamTicketConnection, TeamTicketConnectionInput, TeamTicketGetInput,
+  TeamTicketLaunchInput, TeamTicketPreview, TeamTicketSearchInput, TeamTicketSearchResult,
+} from './team-tickets-types';
 import { requestGithubBrowserOpen } from './github-browser';
 import { isRemoteCredentialRejection } from './remote-response';
 import { initOperatorsRegistry } from '../runtime/operators-registry';
@@ -303,6 +307,13 @@ type DesktopMethod =
   | 'opsBriefSchedule'
   | 'opsBriefGenerate'
   | 'runBoard'
+  | 'teamTicketsList'
+  | 'teamTicketsSave'
+  | 'teamTicketsDelete'
+  | 'teamTicketsSearch'
+  | 'teamTicketsGet'
+  | 'teamTicketsAgents'
+  | 'teamTicketsLaunch'
   | 'loopsList'
   | 'loopsGet'
   | 'loopsCompile'
@@ -839,6 +850,11 @@ function desktop(): DesktopBridge {
 
 function invoke<T>(method: DesktopMethod, payload?: unknown) {
   return desktop().invoke<T>(method, payload);
+}
+
+function invokeTeamTickets<T>(method: DesktopMethod, payload?: unknown): Promise<T> {
+  if (isRemoteClient()) return Promise.reject(new Error('Use the local desktop app to connect team boards and launch tickets.'));
+  return invoke<T>(method, payload);
 }
 
 const TOKEN_STORAGE_KEY = 'ace.remoteToken';
@@ -2190,6 +2206,15 @@ export type HermesDesktopEvent = {
 export type RuntimeState = { status: 'starting' | 'ready' | 'boot-error'; reason?: string };
 
 export const aceApi = {
+  teamTickets: {
+    listConnections: () => invokeTeamTickets<TeamTicketConnection[]>('teamTicketsList'),
+    saveConnection: (input: TeamTicketConnectionInput) => invokeTeamTickets<TeamTicketConnection>('teamTicketsSave', input),
+    deleteConnection: (id: string) => invokeTeamTickets<{ deleted: boolean }>('teamTicketsDelete', { id }),
+    searchTickets: (input: TeamTicketSearchInput) => invokeTeamTickets<TeamTicketSearchResult>('teamTicketsSearch', input),
+    getTicket: (input: TeamTicketGetInput) => invokeTeamTickets<TeamTicketPreview>('teamTicketsGet', input),
+    getLaunchAgents: () => invokeTeamTickets<AgentCatalogEntry[]>('teamTicketsAgents'),
+    launch: (input: TeamTicketLaunchInput) => invokeTeamTickets<{ taskId: string; promptDelivered: boolean }>('teamTicketsLaunch', input),
+  },
   core: {
     getState: () => invoke<AceState>('getState'),
     subscribe: (listener: (state: AceState) => void) => desktop().subscribe(listener),
