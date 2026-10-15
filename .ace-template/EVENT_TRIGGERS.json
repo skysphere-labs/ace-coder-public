@@ -1,0 +1,35 @@
+[
+  {
+    "schema": "ace.event_trigger.v1",
+    "id": "legacy-disabled-worker-done-evaluation",
+    "listensTo": "worker.completion.detected",
+    "condition": "payload.kind == 'DONE'",
+    "action": "spawn_task",
+    "payload": {
+      "taskType": "evaluation",
+      "preferredAgent": "claude"
+    },
+    "enabled": false
+  },
+  {
+    "schema": "ace.event_trigger.v1",
+    "id": "legacy-disabled-feature-failed-repair",
+    "listensTo": "feature.failed",
+    "action": "send_fixback",
+    "payload": {
+      "maxSameWorkerFixbacks": 2
+    },
+    "enabled": false
+  },
+  {
+    "schema": "ace.event_trigger.v1",
+    "id": "on-feature-pass-request-hermes-wiki-review",
+    "listensTo": "feature.passed",
+    "action": "notify_human",
+    "payload": {
+      "owner": "hermes",
+      "next": "review memory candidates and suggested wiki deltas before canonical wiki update"
+    },
+    "enabled": true
+  }
+]

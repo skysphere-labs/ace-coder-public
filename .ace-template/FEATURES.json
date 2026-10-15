@@ -1,0 +1,28 @@
+[
+  {
+    "id": "project.harness.initialized",
+    "wave": 0,
+    "category": "harness",
+    "priority": 1,
+    "description": "Project harness files exist and are ready for worker waves.",
+    "steps": [
+      "Run .ace/init.sh",
+      "Verify scaffold files exist",
+      "Verify FEATURES.json parses"
+    ],
+    "passes": false
+  },
+  {
+    "id": "project.harness.validator_loop",
+    "wave": 0,
+    "category": "harness",
+    "priority": 2,
+    "description": "Completion artifacts are validated by a validator-fixer-merger before feature checks pass.",
+    "steps": [
+      "Write .ace/run/<runId>/completion.json",
+      "Run ace task validate --run <runId> --feature <featureId>",
+      "Confirm feature.failed creates a fixback and feature.passed creates a memory candidate"
+    ],
+    "passes": false
+  }
+]

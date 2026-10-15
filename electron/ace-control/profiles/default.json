@@ -1,0 +1,15 @@
+{
+  "id": "default",
+  "name": "Generic",
+  "detect": { "agent": "*", "argv": [], "banner": "" },
+  "ready": { "pattern": "[$#>❯▌]\\s*$" },
+  "busy": { "pattern": "^$" },
+  "approval": { "pattern": "\\[y/N\\]|\\[Y/n\\]|\\(y/n\\)" },
+  "error": { "pattern": "^(?:Error|Fatal|ERROR):|\\bcontext_length_exceeded\\b|\\b[Cc]ontext (?:length|window) (?:exceeded|exhausted)\\b|\\b(?:[Yy]our )?input exceeds the context window\\b|\\bexceeds the context window\\b|\\b[Mm]aximum context length\\b|\\b[Ee]xceeded the model context\\b|\\b[Cc]ontext (?:compaction|compression) failed\\b|\\b[Ff]ailed to (?:compact|compress) context\\b" },
+  "submit": "enter",
+  "abort": { "key": "ctrl+c", "repeat": 1 },
+  "multiline": "shift+enter",
+  "slash": [],
+  "fileRef": "@",
+  "turns": {}
+}

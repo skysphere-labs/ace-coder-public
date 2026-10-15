@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ace.local/schemas/task-spec.schema.json",
+  "title": "TaskSpec",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "title", "goal", "taskType", "context", "constraints", "deliverables", "acceptance", "requireChanges"],
+  "properties": {
+    "schema": { "const": "ace.task_spec.v1" },
+    "taskId": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "goal": { "type": "string", "minLength": 1 },
+    "taskType": {
+      "type": "string",
+      "enum": ["feature-impl", "bug-fix", "refactor", "ui", "research", "planning", "docs", "ops", "evaluation", "prune"]
+    },
+    "context": { "type": "string" },
+    "constraints": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "deliverables": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "acceptance": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "allowedPaths": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "blockedPaths": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "skills": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "capabilities": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "preferredAgent": { "type": "string", "enum": ["codex", "claude", "hermes", "cursor", "gemini"] },
+    "toolMode": { "type": "string", "enum": ["off", "on"] },
+    "mcpMode": { "type": "string", "enum": ["off", "global"] },
+    "browserMode": { "type": "string", "enum": ["off", "on"] },
+    "codexRuntimeProfile": { "type": "string", "enum": ["app-parity"] },
+    "toolOverrideReason": { "type": "string", "minLength": 1 },
+    "goalMode": { "type": "string", "enum": ["auto", "on", "off"] },
+    "goalLedgerPath": { "type": "string", "minLength": 1 },
+    "goalLedgerMode": { "type": "string", "enum": ["auto", "on", "off"] },
+    "requireChanges": { "enum": ["auto", true, false] },
+    "maxRounds": { "type": "integer", "minimum": 0 },
+    "maxVerifyRounds": { "type": "integer", "minimum": 0 },
+    "verifier": { "type": "string", "minLength": 1 }
+  }
+}

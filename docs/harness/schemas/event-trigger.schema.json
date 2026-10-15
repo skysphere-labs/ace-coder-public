@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ace.local/schemas/event-trigger.schema.json",
+  "title": "EventTrigger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "id", "listensTo", "action", "payload", "enabled"],
+  "properties": {
+    "schema": { "const": "ace.event_trigger.v1" },
+    "id": { "type": "string", "minLength": 1 },
+    "listensTo": { "type": "string", "minLength": 1 },
+    "condition": { "type": "string", "minLength": 1 },
+    "action": {
+      "type": "string",
+      "enum": ["spawn_task", "send_fixback", "mark_feature", "create_memory_candidate", "update_wiki", "notify_human", "request_approval"]
+    },
+    "payload": { "type": "object" },
+    "enabled": { "type": "boolean" }
+  }
+}

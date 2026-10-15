@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ace.local/schemas/handoff-envelope.schema.json",
+  "title": "HandoffEnvelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "handoffId", "parentHandoffId", "source", "target", "workspaceId", "runId", "spec", "contextRefs", "trailerContract", "budget", "createdAt"],
+  "properties": {
+    "schema": { "const": "ace.handoff_envelope.v1" },
+    "handoffId": { "type": "string", "minLength": 1 },
+    "parentHandoffId": { "type": ["string", "null"] },
+    "source": { "$ref": "#/$defs/agentRef" },
+    "target": { "$ref": "#/$defs/agentRef" },
+    "workspaceId": { "type": "string", "minLength": 1 },
+    "taskId": { "type": "string", "minLength": 1 },
+    "runId": { "type": "string", "minLength": 1 },
+    "spec": { "$ref": "task-spec.schema.json" },
+    "contextRefs": { "type": "array", "items": { "$ref": "#/$defs/contextRef" } },
+    "trailerContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["done", "blocked"],
+      "properties": {
+        "done": { "const": "DONE:" },
+        "blocked": { "const": "BLOCKED:" },
+        "verdict": { "const": "VERDICT:" }
+      }
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["maxRounds", "maxVerifyRounds", "perTurnTimeoutMs"],
+      "properties": {
+        "maxRounds": { "type": "integer", "minimum": 0 },
+        "maxVerifyRounds": { "type": "integer", "minimum": 0 },
+        "perTurnTimeoutMs": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "createdAt": { "type": "string", "format": "date-time" }
+  },
+  "$defs": {
+    "agentRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["agent", "role"],
+      "properties": {
+        "agent": { "type": "string", "minLength": 1 },
+        "streamId": { "type": ["string", "null"] },
+        "role": { "type": "string", "enum": ["orchestrator", "builder", "planner", "evaluator", "reviewer", "memory", "auditor", "human"] }
+      }
+    },
+    "contextRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "ref", "purpose"],
+      "properties": {
+        "kind": { "type": "string", "enum": ["file", "commit", "stream-turn", "trace-event", "url", "doc"] },
+        "ref": { "type": "string", "minLength": 1 },
+        "purpose": { "type": "string", "enum": ["read-first", "inspect-first", "reference", "prior-result"] },
+        "sha": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

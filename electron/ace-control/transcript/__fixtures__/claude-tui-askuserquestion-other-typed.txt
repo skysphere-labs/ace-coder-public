@@ -1,0 +1,40 @@
+❯ Use the AskUserQuestion tool now. Ask exactly one question: "Which accent color should the dashboard use?"
+  with header "Color" and exactly three options: label "Red" (description "warm, high energy"), label "Blue"
+  (description "calm, corporate"), label "Green" (description "fresh, natural"). multiSelect false. Do
+  nothing else.
+
+⏺ User answered Claude's questions:
+  ⎿  · Which accent color should the dashboard use? → Blue
+
+⏺ Blue it is.
+
+✻ Crunched for 2m 52s
+
+❯ Now use AskUserQuestion again. One question: "Which toppings should the pizza have?" header "Toppings",
+  options: "Cheese" (description "classic mozzarella"), "Mushrooms" (description "earthy cremini"), "Olives"
+  (description "briny kalamata"). Set multiSelect true. Do nothing else.
+
+⏺ User answered Claude's questions:
+  ⎿  · Which toppings should the pizza have? → Cheese, Olives
+
+⏺ Cheese and Olives selected.
+
+✻ Brewed for 6s
+
+❯ One more AskUserQuestion. One question: "What should the project codename be?" header "Codename", options:
+  "Falcon" (description "fast, aggressive"), "Meteor" (description "flashy, bright"). multiSelect false. Do
+  nothing else.
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ ☐ Codename
+
+What should the project codename be?
+
+  1. Falcon
+     fast, aggressive
+  2. Meteor
+     flashy, bright
+❯ 3. teal-harbor
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  4. Chat about this
+
+Enter to select · ↑/↓ to navigate · ctrl+g to edit in VS Code · Esc to cancel

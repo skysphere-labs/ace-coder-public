@@ -1,0 +1,29 @@
+mode: "simple-first"
+waves:
+  - id: 0
+    name: "Project harness"
+    joinGate: "all harness checks validate before application work starts"
+    tasks:
+      - id: "w0-scaffold"
+        agent: "codex"
+        type: "docs"
+        goal: "Initialize and verify the project harness files."
+      - id: "w0-validator-loop"
+        agent: "claude"
+        type: "evaluation"
+        goal: "Run ace task validate on worker completion artifacts and route pass/fail triggers."
+  - id: 1
+    name: "First application slice"
+    strategy: "single-goal-agent"
+    joinGate: "run the validator-fixer-merger after the GoalAgent reaches DONE/BLOCKED"
+    tasks:
+      - id: "w1-first-feature-a"
+        agent: "codex"
+        type: "feature-impl"
+        lane: "build"
+        goal: "Implement the first verified product feature in an isolated worktree."
+      - id: "w1-first-feature-validator"
+        agent: "codex"
+        type: "validator-fixer-merger"
+        lane: "validator"
+        goal: "Validate completion artifacts, update feature checks, repair ordinary in-scope defects, and merge only through Ace integration."

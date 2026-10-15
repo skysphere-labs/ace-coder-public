@@ -1,0 +1,1579 @@
+{
+  "version": 3,
+  "lastUpdated": "2026-06-16",
+  "skills": [
+    {
+      "id": "cloudflare-deploy",
+      "displayName": "Cloudflare Deploy",
+      "description": "Deploy Workers, Pages, and platform services on Cloudflare",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/cloudflare-deploy",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/cloudflare-deploy/assets/cloudflare-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Deploy this app to Cloudflare (Workers or Pages) and return URL, config, and required env vars.",
+      "frontmatter": {
+        "name": "cloudflare-deploy",
+        "description": "Deploy Workers, Pages, and platform services on Cloudflare"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "develop-web-game",
+      "displayName": "Develop Web Game",
+      "description": "Web game dev + Playwright test loop",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/develop-web-game",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/develop-web-game/assets/game-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Build and iterate a playable web game in this workspace, validating changes with a Playwright loop.",
+      "frontmatter": {
+        "name": "develop-web-game",
+        "description": "Web game dev + Playwright test loop"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "doc",
+      "displayName": "Word Docs",
+      "description": "Edit and review docx files",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/doc",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/doc/assets/doc-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Edit or review this .docx file and return the updated file plus a concise change summary.",
+      "frontmatter": {
+        "name": "doc",
+        "description": "Edit and review docx files"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "figma",
+      "displayName": "Figma",
+      "description": "Use Figma MCP for design-to-code work",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/figma",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/figma/assets/figma-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Use Figma MCP to inspect the target design and translate it into implementable UI decisions.",
+      "frontmatter": {
+        "name": "figma",
+        "description": "Use Figma MCP for design-to-code work"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "figma-implement-design",
+      "displayName": "Figma Implement Design",
+      "description": "Turn Figma designs into production-ready code",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/figma-implement-design",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/figma-implement-design/assets/figma-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Implement this Figma design in this codebase, matching layout, states, and responsive behavior.",
+      "frontmatter": {
+        "name": "figma-implement-design",
+        "description": "Turn Figma designs into production-ready code"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "gh-address-comments",
+      "displayName": "GitHub Address Comments",
+      "description": "Address comments in a GitHub PR review",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/gh-address-comments",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/gh-address-comments/assets/github-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Address all actionable GitHub PR review comments in this branch and summarize the updates.",
+      "frontmatter": {
+        "name": "gh-address-comments",
+        "description": "Address comments in a GitHub PR review"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "gh-fix-ci",
+      "displayName": "GitHub Fix CI",
+      "description": "Debug failing GitHub Actions CI",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/gh-fix-ci",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/gh-fix-ci/assets/github-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Inspect failing GitHub Actions checks in this repo, summarize root cause, and propose a focused fix plan.",
+      "frontmatter": {
+        "name": "gh-fix-ci",
+        "description": "Debug failing GitHub Actions CI"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "imagegen",
+      "displayName": "Image Gen",
+      "description": "Generate and edit images using OpenAI",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/imagegen",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/imagegen/assets/imagegen-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Generate or edit images for this task and return the final prompt plus selected outputs.",
+      "frontmatter": {
+        "name": "imagegen",
+        "description": "Generate and edit images using OpenAI"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "jupyter-notebook",
+      "displayName": "Jupyter Notebooks",
+      "description": "Create Jupyter notebooks for experiments and tutorials",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/jupyter-notebook",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/jupyter-notebook/assets/jupyter-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Create a Jupyter notebook for this task with clear sections, runnable cells, and concise takeaways.",
+      "frontmatter": {
+        "name": "jupyter-notebook",
+        "description": "Create Jupyter notebooks for experiments and tutorials"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "linear",
+      "displayName": "Linear",
+      "description": "Manage Linear issues in Codex",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/linear",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/linear/assets/linear-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Use Linear context to triage or update relevant issues for this task, with clear next actions.",
+      "frontmatter": {
+        "name": "linear",
+        "description": "Manage Linear issues in Codex"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "netlify-deploy",
+      "displayName": "Netlify Deploy",
+      "description": "Deploy web projects to Netlify with the Netlify CLI",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/netlify-deploy",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/netlify-deploy/assets/netlify-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Deploy this project to Netlify and return the preview URL, build settings, and any required fixes.",
+      "frontmatter": {
+        "name": "netlify-deploy",
+        "description": "Deploy web projects to Netlify with the Netlify CLI"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "notion-knowledge-capture",
+      "displayName": "Notion Knowledge Capture",
+      "description": "Capture conversations into structured Notion pages",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/notion-knowledge-capture",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/notion-knowledge-capture/assets/notion-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Capture this conversation into structured Notion pages with decisions, action items, and owners when known.",
+      "frontmatter": {
+        "name": "notion-knowledge-capture",
+        "description": "Capture conversations into structured Notion pages"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "notion-meeting-intelligence",
+      "displayName": "Notion Meeting Intelligence",
+      "description": "Prep meetings with Notion context and tailored agendas",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/notion-meeting-intelligence",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/notion-meeting-intelligence/assets/notion-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Prepare this meeting from Notion context with a brief, agenda, decisions needed, and open questions.",
+      "frontmatter": {
+        "name": "notion-meeting-intelligence",
+        "description": "Prep meetings with Notion context and tailored agendas"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "notion-research-documentation",
+      "displayName": "Notion Research & Documentation",
+      "description": "Research Notion content and produce briefs/reports",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/notion-research-documentation",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/notion-research-documentation/assets/notion-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Research this topic in Notion and produce a sourced brief with clear recommendations.",
+      "frontmatter": {
+        "name": "notion-research-documentation",
+        "description": "Research Notion content and produce briefs/reports"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "notion-spec-to-implementation",
+      "displayName": "Notion Spec to Implementation",
+      "description": "Turn Notion specs into implementation plans, tasks, and progress tracking",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/notion-spec-to-implementation",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/notion-spec-to-implementation/assets/notion-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Turn this Notion spec into an implementation plan with milestones, tasks, and dependencies.",
+      "frontmatter": {
+        "name": "notion-spec-to-implementation",
+        "description": "Turn Notion specs into implementation plans, tasks, and progress tracking"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "openai-docs",
+      "displayName": "OpenAI Docs",
+      "description": "Reference the official OpenAI Developer docs",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/openai-docs",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/openai-docs/assets/openai-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Look up official OpenAI docs for this task and answer with concise, cited guidance.",
+      "frontmatter": {
+        "name": "openai-docs",
+        "description": "Reference the official OpenAI Developer docs"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "pdf",
+      "displayName": "PDF Skill",
+      "description": "Create, edit, and review PDFs",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/pdf",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/pdf/assets/pdf.png",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Create, edit, or review this PDF and summarize the key output or changes.",
+      "frontmatter": {
+        "name": "pdf",
+        "description": "Create, edit, and review PDFs"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "playwright",
+      "displayName": "Playwright CLI Skill",
+      "description": "Automate real browsers from the terminal",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/playwright",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/playwright/assets/playwright-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Automate this browser workflow with Playwright and produce a reliable script with run steps.",
+      "frontmatter": {
+        "name": "playwright",
+        "description": "Automate real browsers from the terminal"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "render-deploy",
+      "displayName": "Render Deploy",
+      "description": "Deploy applications to Render via Blueprints or MCP",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/render-deploy",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/render-deploy/assets/render-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Deploy this application to Render and provide service URL, env vars, and next checks.",
+      "frontmatter": {
+        "name": "render-deploy",
+        "description": "Deploy applications to Render via Blueprints or MCP"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "screenshot",
+      "displayName": "Screenshot Capture",
+      "description": "Capture screenshots",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/screenshot",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/screenshot/assets/screenshot-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Capture the right screenshot for this task (target, area, and output path).",
+      "frontmatter": {
+        "name": "screenshot",
+        "description": "Capture screenshots"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "security-best-practices",
+      "displayName": "Security Best Practices",
+      "description": "Security reviews and secure-by-default guidance",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/security-best-practices",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Review this codebase for security best practices and suggest secure-by-default improvements.",
+      "frontmatter": {
+        "name": "security-best-practices",
+        "description": "Security reviews and secure-by-default guidance"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "security-ownership-map",
+      "displayName": "Security Ownership Map",
+      "description": "Map maintainers, bus factor, and sensitive code ownership",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/security-ownership-map",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Build a security ownership map for this repository and identify bus-factor risks in sensitive code.",
+      "frontmatter": {
+        "name": "security-ownership-map",
+        "description": "Map maintainers, bus factor, and sensitive code ownership"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "security-threat-model",
+      "displayName": "Security Threat Model",
+      "description": "Repo-grounded threat modeling and abuse-path analysis",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/security-threat-model",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Create a repository-grounded threat model for this codebase with prioritized abuse paths and mitigations.",
+      "frontmatter": {
+        "name": "security-threat-model",
+        "description": "Repo-grounded threat modeling and abuse-path analysis"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "sentry",
+      "displayName": "Sentry",
+      "description": "Read-only Sentry observability",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/sentry",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/sentry/assets/sentry-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Investigate this issue in read-only Sentry data and report likely root cause, impact, and next steps.",
+      "frontmatter": {
+        "name": "sentry",
+        "description": "Read-only Sentry observability"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "sora",
+      "displayName": "Sora Video Generation Skill",
+      "description": "Generate and manage Sora videos",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/sora",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/sora/assets/sora-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Plan and generate a Sora video for this request, then iterate with concrete prompt edits.",
+      "frontmatter": {
+        "name": "sora",
+        "description": "Generate and manage Sora videos"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "spreadsheet",
+      "displayName": "Spreadsheet Skill",
+      "description": "Create, edit, and analyze spreadsheets",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/spreadsheet",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/spreadsheet/assets/spreadsheet-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Create or update a spreadsheet for this task with the right formulas, structure, and formatting.",
+      "frontmatter": {
+        "name": "spreadsheet",
+        "description": "Create, edit, and analyze spreadsheets"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "transcribe",
+      "displayName": "Audio Transcribe",
+      "description": "Transcribe audio using OpenAI, with optional speaker diarization",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/transcribe",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/transcribe/assets/transcribe-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Transcribe this audio or video, include speaker labels when possible, and provide a clean summary.",
+      "frontmatter": {
+        "name": "transcribe",
+        "description": "Transcribe audio using OpenAI, with optional speaker diarization"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "vercel-deploy",
+      "displayName": "Vercel Deploy",
+      "description": "Deploy apps and agents with zero configuration on Vercel",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/vercel-deploy",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/vercel-deploy/assets/vercel-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Create a Vercel deployment for this project and share the URL.",
+      "frontmatter": {
+        "name": "vercel-deploy",
+        "description": "Deploy apps and agents with zero configuration on Vercel"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "yeet",
+      "displayName": "Yeet",
+      "description": "Stage, commit, and open PR",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.curated/yeet",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/yeet/assets/yeet-small.svg",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Prepare this branch for review: stage intended changes, write a focused commit, and open a PR.",
+      "frontmatter": {
+        "name": "yeet",
+        "description": "Stage, commit, and open PR"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "skill-creator",
+      "displayName": "Skill Creator",
+      "description": "Create or update a skill",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.system/skill-creator",
+      "brandColor": "#10a37f",
+      "defaultPrompt": "Read my repository and create a skill to bootstrap new components for my project.",
+      "frontmatter": {
+        "name": "skill-creator",
+        "description": "Create or update a skill"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "skill-installer",
+      "displayName": "Skill Installer",
+      "description": "Install curated skills from openai/skills or other repos",
+      "source": "openai",
+      "sourceUrl": "https://github.com/openai/skills/tree/main/skills/.system/skill-installer",
+      "iconUrl": "https://raw.githubusercontent.com/openai/skills/main/skills/.system/skill-installer/assets/skill-installer-small.svg",
+      "brandColor": "#10a37f",
+      "frontmatter": {
+        "name": "skill-installer",
+        "description": "Install curated skills from openai/skills or other repos"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "pdf",
+      "displayName": "PDF",
+      "description": "Read, create, merge, split, and process PDF files",
+      "source": "anthropic",
+      "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/pdf",
+      "brandColor": "#d4a574",
+      "defaultPrompt": "Help me work with this PDF file",
+      "frontmatter": {
+        "name": "pdf",
+        "description": "Read, create, merge, split, and process PDF files"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "docx",
+      "displayName": "Docx",
+      "description": "Create and edit Word documents programmatically",
+      "source": "anthropic",
+      "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/docx",
+      "brandColor": "#d4a574",
+      "defaultPrompt": "Help me create a Word document",
+      "frontmatter": {
+        "name": "docx",
+        "description": "Create and edit Word documents programmatically"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "xlsx",
+      "displayName": "Xlsx",
+      "description": "Create and edit Excel spreadsheets programmatically",
+      "source": "anthropic",
+      "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/xlsx",
+      "brandColor": "#d4a574",
+      "defaultPrompt": "Help me create an Excel spreadsheet",
+      "frontmatter": {
+        "name": "xlsx",
+        "description": "Create and edit Excel spreadsheets programmatically"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "pptx",
+      "displayName": "Pptx",
+      "description": "Create and edit PowerPoint presentations programmatically",
+      "source": "anthropic",
+      "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/pptx",
+      "brandColor": "#d4a574",
+      "defaultPrompt": "Help me create a PowerPoint presentation",
+      "frontmatter": {
+        "name": "pptx",
+        "description": "Create and edit PowerPoint presentations programmatically"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "mcp-builder",
+      "displayName": "MCP Builder",
+      "description": "Build Model Context Protocol (MCP) servers and tools",
+      "source": "anthropic",
+      "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/mcp-builder",
+      "brandColor": "#d4a574",
+      "defaultPrompt": "Help me build an MCP server",
+      "frontmatter": {
+        "name": "mcp-builder",
+        "description": "Build Model Context Protocol (MCP) servers and tools"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "frontend-design",
+      "displayName": "Frontend Design",
+      "description": "Design and build frontend UI components and layouts",
+      "source": "anthropic",
+      "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
+      "brandColor": "#d4a574",
+      "defaultPrompt": "Design a frontend component for this feature",
+      "frontmatter": {
+        "name": "frontend-design",
+        "description": "Design and build frontend UI components and layouts"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "webapp-testing",
+      "displayName": "Webapp Testing",
+      "description": "Write and run tests for web applications",
+      "source": "anthropic",
+      "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing",
+      "brandColor": "#d4a574",
+      "defaultPrompt": "Write tests for this web application",
+      "frontmatter": {
+        "name": "webapp-testing",
+        "description": "Write and run tests for web applications"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "web-artifacts-builder",
+      "displayName": "Web Artifacts Builder",
+      "description": "Build interactive web artifacts and components",
+      "source": "anthropic",
+      "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder",
+      "brandColor": "#d4a574",
+      "defaultPrompt": "Build a web artifact for this",
+      "frontmatter": {
+        "name": "web-artifacts-builder",
+        "description": "Build interactive web artifacts and components"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "algorithmic-art",
+      "displayName": "Algorithmic Art",
+      "description": "Create generative and algorithmic art with code",
+      "source": "anthropic",
+      "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art",
+      "brandColor": "#d4a574",
+      "defaultPrompt": "Create an algorithmic art piece",
+      "frontmatter": {
+        "name": "algorithmic-art",
+        "description": "Create generative and algorithmic art with code"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "canvas-design",
+      "displayName": "Canvas Design",
+      "description": "Design and render graphics using HTML5 Canvas",
+      "source": "anthropic",
+      "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/canvas-design",
+      "brandColor": "#d4a574",
+      "defaultPrompt": "Create a Canvas-based design",
+      "frontmatter": {
+        "name": "canvas-design",
+        "description": "Design and render graphics using HTML5 Canvas"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "theme-factory",
+      "displayName": "Theme Factory",
+      "description": "Create and customize UI themes and design tokens",
+      "source": "anthropic",
+      "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/theme-factory",
+      "brandColor": "#d4a574",
+      "defaultPrompt": "Create a custom theme for this application",
+      "frontmatter": {
+        "name": "theme-factory",
+        "description": "Create and customize UI themes and design tokens"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "brand-guidelines",
+      "displayName": "Brand Guidelines",
+      "description": "Create and maintain brand guidelines and style guides",
+      "source": "anthropic",
+      "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines",
+      "brandColor": "#d4a574",
+      "defaultPrompt": "Create brand guidelines for this project",
+      "frontmatter": {
+        "name": "brand-guidelines",
+        "description": "Create and maintain brand guidelines and style guides"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "doc-coauthoring",
+      "displayName": "Doc Coauthoring",
+      "description": "Collaboratively write and edit documents",
+      "source": "anthropic",
+      "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring",
+      "brandColor": "#d4a574",
+      "defaultPrompt": "Help me write this document",
+      "frontmatter": {
+        "name": "doc-coauthoring",
+        "description": "Collaboratively write and edit documents"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "internal-comms",
+      "displayName": "Internal Comms",
+      "description": "Draft internal communications and announcements",
+      "source": "anthropic",
+      "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/internal-comms",
+      "brandColor": "#d4a574",
+      "defaultPrompt": "Draft an internal communication",
+      "frontmatter": {
+        "name": "internal-comms",
+        "description": "Draft internal communications and announcements"
+      },
+      "provenance": "external",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-cli",
+      "displayName": "Ace CLI",
+      "description": "Drive Ace agent tabs and orchestrate sub-agents via the ace CLI",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-cli",
+      "bundledPath": "assets/skills/ace-cli/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Use ace to list streams, delegate a task to a sub-agent, or drive an existing tab.",
+      "frontmatter": {
+        "name": "ace-cli",
+        "description": "Drive Ace agent tabs and orchestrate sub-agents via the ace CLI"
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-task-worker",
+      "displayName": "Ace Task Worker",
+      "description": "Durable doctrine for Ace task workers - trailer contract, acceptance verification, PR handoff, and bundled skill reminders.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-task-worker",
+      "bundledPath": "assets/skills/ace-task-worker/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-task-worker skill for the DONE/BLOCKED contract, acceptance verification pattern, and PR handoff before working.",
+      "frontmatter": {
+        "name": "ace-task-worker",
+        "description": "Durable doctrine for Ace task workers - trailer contract, acceptance verification, PR handoff, and bundled skill reminders."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "skysphere-tickets",
+      "displayName": "Skysphere Tickets",
+      "description": "Agent-side SOP for a Skysphere-assigned ticket run - scope from the confirmed handoff, comments-only writebacks, proof comments and review requests via the sky CLI, never mutate ticket state directly.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/skysphere-tickets",
+      "bundledPath": "assets/skills/skysphere-tickets/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the skysphere-tickets skill for the ticket-run SOP (comments-only writebacks, sky CLI proof comments) before working.",
+      "frontmatter": {
+        "name": "skysphere-tickets",
+        "description": "Agent-side SOP for a Skysphere-assigned ticket run - scope from the confirmed handoff, comments-only writebacks, proof comments and review requests via the sky CLI, never mutate ticket state directly."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-goal-worker",
+      "displayName": "Ace Goal Worker",
+      "description": "Minimal worker contract for a Ace goal agent. Read the GoalAgentSpec, work the Goal Ledger, end with DONE or BLOCKED.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-goal-worker",
+      "bundledPath": "assets/skills/ace-goal-worker/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the GoalAgentSpec at .ace/goals/<missionId>/<featureId>/GOAL_AGENT_SPEC.md, keep the Goal Ledger current, and end with DONE or BLOCKED.",
+      "frontmatter": {
+        "name": "ace-goal-worker",
+        "description": "Minimal worker contract for a Ace goal agent. Read the GoalAgentSpec, work the Goal Ledger, end with DONE or BLOCKED."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-github-flow",
+      "displayName": "Ace GitHub Flow",
+      "description": "Single source of truth for GitHub + project management across every repo Ace touches — branch model (Enterprise dev/prod vs Solo trunk), scoped PR handoff, GitHub Actions/current-head evidence, optional merge gates, Cloudflare dev/prod deploy gating, conflict handling, and new-project scaffolding.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-github-flow",
+      "bundledPath": "assets/skills/ace-github-flow/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-github-flow skill — it is the single doctrine for the branch model, pushing/opening PRs via the integration gateway, GitHub Actions/current-head evidence, optional merge gates, dev/prod + Cloudflare deploy gating, conflict handling, and new-project scaffolding.",
+      "frontmatter": {
+        "name": "ace-github-flow",
+        "description": "Single source of truth for GitHub + project management across every repo Ace touches — branch model (Enterprise dev/prod vs Solo trunk), scoped PR handoff, GitHub Actions/current-head evidence, optional merge gates, Cloudflare dev/prod deploy gating, conflict handling, and new-project scaffolding."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-runtime-contract",
+      "displayName": "Ace Runtime Contract",
+      "description": "Compact baseline runtime contract — wiki + Mission Board as rehydration spine, derived stream actionability, wake brief deprecated.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-runtime-contract",
+      "bundledPath": "assets/skills/ace-runtime-contract/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-runtime-contract skill first for the compact baseline before loading larger orchestrator/operator doctrine.",
+      "frontmatter": {
+        "name": "ace-runtime-contract",
+        "description": "Compact baseline runtime contract for every Ace orchestrator, validator, and worker. Wiki + Mission Board are the rehydration spine; wake brief is deprecated."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-memory",
+      "displayName": "Ace Memory",
+      "description": "Unified knowledge base for every agent - browse-first retrieval ladder (pack, index pages, memory search), trust tiers + decay semantics, and dump-only write rules (never canon).",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-memory",
+      "bundledPath": "assets/skills/ace-memory/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-memory skill before searching or recording knowledge - follow the retrieval ladder and never write canon directly.",
+      "frontmatter": {
+        "name": "ace-memory",
+        "description": "How every Ace agent uses the unified knowledge base - the browse-first retrieval ladder, trust tiers and decay, and recording durable claims (dumps only, never canon)."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "grill-me",
+      "displayName": "Grill Me",
+      "description": "Ask sharp clarification questions one at a time, recommend a default answer, and inspect the codebase when the answer is discoverable.",
+      "source": "mattpocock",
+      "sourceUrl": "https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md",
+      "bundledPath": "assets/skills/grill-me/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Use the grill-me skill to stress-test the plan with one question at a time, recommended defaults, and repo inspection when possible.",
+      "frontmatter": {
+        "name": "grill-me",
+        "description": "Ask sharp clarification questions one at a time, recommend a default answer, and inspect the codebase when the answer is discoverable."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-rubric-first",
+      "displayName": "Ace Rubric First",
+      "description": "Use when King/Rook are about to execute complex Ace product, agentic, multi-agent, UI, Blender/MCP, legal/security, or high-drift work; requires a written rubric and durable plan/architecture anchor before implementation.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-rubric-first",
+      "bundledPath": "assets/skills/ace-rubric-first/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-rubric-first skill before running lean Ace orchestration work.",
+      "frontmatter": {
+        "name": "ace-rubric-first",
+        "description": "Use when King/Rook are about to execute complex Ace product, agentic, multi-agent, UI, Blender/MCP, legal/security, or high-drift work; requires a written rubric and durable plan/architecture anchor before implementation."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-major-prune-program",
+      "displayName": "Ace Major Prune Program",
+      "description": "Doctrine for shrinking Ace aggressively without breaking runtime: evidence-first deletion, feature-retirement gates, LOC measurement, and staged PRs.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-major-prune-program",
+      "bundledPath": "assets/skills/ace-major-prune-program/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-major-prune-program skill before running lean Ace orchestration work.",
+      "frontmatter": {
+        "name": "ace-major-prune-program",
+        "description": "Doctrine for shrinking Ace aggressively without breaking runtime: evidence-first deletion, feature-retirement gates, LOC measurement, and staged PRs."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-auto-followup",
+      "displayName": "Ace Auto Followup",
+      "description": "After dispatching a ace worker (especially --fire-and-forget), automatically schedule a wakeup to poll status and report back. Do not ask the user for permission to schedule.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-auto-followup",
+      "bundledPath": "assets/skills/ace-auto-followup/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-auto-followup skill before running lean Ace orchestration work.",
+      "frontmatter": {
+        "name": "ace-auto-followup",
+        "description": "After dispatching a ace worker (especially --fire-and-forget), automatically schedule a wakeup to poll status and report back. Do not ask the user for permission to schedule."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-graceful-rebuild-relaunch",
+      "displayName": "Ace Graceful Rebuild Relaunch",
+      "description": "Use when Chief approves a full Ace rebuild/reinstall/relaunch and wants preserved state plus proof that merged PRs are actually packaged, installed, running, and healthy.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-graceful-rebuild-relaunch",
+      "bundledPath": "assets/skills/ace-graceful-rebuild-relaunch/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-graceful-rebuild-relaunch skill before running lean Ace orchestration work.",
+      "frontmatter": {
+        "name": "ace-graceful-rebuild-relaunch",
+        "description": "Use when Chief approves a full Ace rebuild/reinstall/relaunch and wants preserved state plus proof that merged PRs are actually packaged, installed, running, and healthy."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "autoreview",
+      "displayName": "Auto Review",
+      "description": "Run structured code review closeout for validators; Codex is the default reviewer when no engine is specified.",
+      "source": "openclaw",
+      "sourceUrl": "https://github.com/openclaw/agent-skills/blob/main/skills/autoreview/SKILL.md",
+      "bundledPath": "assets/skills/autoreview/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Use autoreview for validator closeout: run the structured helper when available, verify every finding, and report the final clean result or blocker.",
+      "frontmatter": {
+        "name": "autoreview",
+        "description": "Run structured code review closeout for validators; Codex is the default reviewer when no engine is specified."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "skill-cleaner",
+      "displayName": "Skill Cleaner",
+      "description": "Audit Ace/Codex/OpenClaw skills for duplicate roots, unused skills, prompt-budget cost, and compact descriptions.",
+      "source": "steipete",
+      "sourceUrl": "https://github.com/steipete/agent-scripts/blob/main/skills/skill-cleaner/SKILL.md",
+      "bundledPath": "assets/skills/skill-cleaner/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Use skill-cleaner when adding or pruning skills: audit duplicates, prompt budget, unused candidates, and compact descriptions before changing skill roots.",
+      "frontmatter": {
+        "name": "skill-cleaner",
+        "description": "Audit Ace/Codex/OpenClaw skills for duplicate roots, unused skills, prompt-budget cost, and compact descriptions."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "knip-maintenance",
+      "displayName": "Knip Maintenance",
+      "description": "Run knip to find unused files, exports, and dependencies before maintenance or pruning work.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/knip-maintenance",
+      "bundledPath": "assets/skills/knip-maintenance/SKILL.md",
+      "provenance": "bundled",
+      "agentCompatibility": "shared",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Run knip to identify unused files, exports, dependencies, and config drift, then summarize safe cleanup candidates.",
+      "frontmatter": {
+        "name": "knip-maintenance",
+        "description": "Use knip for maintenance and pruning audits."
+      }
+    },
+    {
+      "id": "trailofbits-security-review",
+      "displayName": "Trail of Bits Security Review",
+      "description": "Shared security review skill sourced from https://github.com/trailofbits/skills. Clone into ~/.claude/skills/ and ~/.codex/skills/ via the project's installer.",
+      "source": "trailofbits",
+      "sourceUrl": "https://github.com/trailofbits/skills",
+      "provenance": "external",
+      "agentCompatibility": "shared",
+      "brandColor": "#171717",
+      "defaultPrompt": "Use the Trail of Bits security review skill to audit this codebase and report prioritized findings with evidence.",
+      "frontmatter": {
+        "name": "trailofbits-security-review",
+        "description": "Shared security review skill sourced from trailofbits/skills."
+      }
+    },
+    {
+      "id": "anthropics-frontend-design",
+      "displayName": "Anthropic Frontend Design",
+      "description": "Reference entry for the frontend-design skill from anthropics/skills.",
+      "source": "anthropic",
+      "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
+      "provenance": "external",
+      "agentCompatibility": "shared",
+      "kind": "reference",
+      "brandColor": "#d4a574",
+      "defaultPrompt": "Reference the Anthropic frontend-design skill for UI design direction before implementing frontend work.",
+      "frontmatter": {
+        "name": "anthropics-frontend-design",
+        "description": "Reference entry for the frontend-design skill from anthropics/skills."
+      }
+    },
+    {
+      "id": "ace-agent-pack-architect",
+      "displayName": "Ace Architect Pack",
+      "description": "Role pack for architecture agents: define boundaries, invariants, risks, and handoff-ready plans.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-agent-pack-architect",
+      "bundledPath": "assets/skills/ace-agent-pack-architect/SKILL.md",
+      "provenance": "bundled",
+      "agentCompatibility": "shared",
+      "kind": "skill",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Use the Ace architect pack to turn this goal into invariants, worker lanes, risks, and validation criteria.",
+      "frontmatter": {
+        "name": "ace-agent-pack-architect",
+        "description": "Role pack for Ace architecture agents."
+      }
+    },
+    {
+      "id": "ace-agent-pack-engineer",
+      "displayName": "Ace Engineer Pack",
+      "description": "Role pack for coding engineers: implement scoped changes quickly, simply, and with verification evidence.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-agent-pack-engineer",
+      "bundledPath": "assets/skills/ace-agent-pack-engineer/SKILL.md",
+      "provenance": "bundled",
+      "agentCompatibility": "shared",
+      "kind": "skill",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Use the Ace engineer pack for a surgical implementation with focused verification.",
+      "frontmatter": {
+        "name": "ace-agent-pack-engineer",
+        "description": "Role pack for Ace coding engineers."
+      }
+    },
+    {
+      "id": "ace-agent-pack-backend",
+      "displayName": "Ace Backend Pack",
+      "description": "Role pack for backend/API/data workers: preserve contracts, add tests, and avoid fake UI-only success.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-agent-pack-backend",
+      "bundledPath": "assets/skills/ace-agent-pack-backend/SKILL.md",
+      "provenance": "bundled",
+      "agentCompatibility": "shared",
+      "kind": "skill",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Use the Ace backend pack to implement or review backend/API/data changes with contract tests.",
+      "frontmatter": {
+        "name": "ace-agent-pack-backend",
+        "description": "Role pack for backend/API/data workers."
+      }
+    },
+    {
+      "id": "ace-agent-pack-ui-designer",
+      "displayName": "Ace UI Designer Pack",
+      "description": "Role pack for UI/product design workers: polished interfaces, real workflows, and responsive verification.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-agent-pack-ui-designer",
+      "bundledPath": "assets/skills/ace-agent-pack-ui-designer/SKILL.md",
+      "provenance": "bundled",
+      "agentCompatibility": "shared",
+      "kind": "skill",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Use the Ace UI designer pack for frontend/product work with real workflow and viewport verification.",
+      "frontmatter": {
+        "name": "ace-agent-pack-ui-designer",
+        "description": "Role pack for UI/product design workers."
+      }
+    },
+    {
+      "id": "steipete-frontend-design",
+      "displayName": "Steipete Frontend Design",
+      "description": "Frontend UI design skill for bold, polished, non-generic pages, apps, and components.",
+      "source": "steipete",
+      "sourceUrl": "https://github.com/steipete/agent-scripts/blob/main/skills/frontend-design/SKILL.md",
+      "bundledPath": "assets/skills/steipete-frontend-design/SKILL.md",
+      "provenance": "bundled",
+      "agentCompatibility": "shared",
+      "kind": "skill",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Use Steipete frontend-design for distinctive, polished frontend UI with a clear aesthetic direction and viewport verification.",
+      "frontmatter": {
+        "name": "steipete-frontend-design",
+        "description": "Frontend UI design skill for bold, polished, non-generic pages, apps, and components."
+      }
+    },
+    {
+      "id": "ace-agent-pack-security",
+      "displayName": "Ace Security Pack",
+      "description": "Role pack for security reviewers and security-sensitive implementers.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-agent-pack-security",
+      "bundledPath": "assets/skills/ace-agent-pack-security/SKILL.md",
+      "provenance": "bundled",
+      "agentCompatibility": "shared",
+      "kind": "skill",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Use the Ace security pack to threat-model, inspect sensitive paths, and report evidence-backed findings.",
+      "frontmatter": {
+        "name": "ace-agent-pack-security",
+        "description": "Role pack for security reviewers and security-sensitive implementers."
+      }
+    },
+    {
+      "id": "ace-agent-pack-cloudflare",
+      "displayName": "Ace Cloudflare Pack",
+      "description": "Role pack for Cloudflare Workers, Pages, D1, R2, KV, deploy, and Wrangler tasks.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-agent-pack-cloudflare",
+      "bundledPath": "assets/skills/ace-agent-pack-cloudflare/SKILL.md",
+      "provenance": "bundled",
+      "agentCompatibility": "shared",
+      "kind": "skill",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Use the Ace Cloudflare pack for Wrangler, Workers, Pages, D1, R2, KV, and credential-safe deploy validation.",
+      "frontmatter": {
+        "name": "ace-agent-pack-cloudflare",
+        "description": "Role pack for Cloudflare Workers, Pages, D1, R2, KV, deploy, and Wrangler tasks."
+      }
+    },
+    {
+      "id": "claude-mem",
+      "displayName": "claude-mem",
+      "description": "Claude-only persistent memory plugin (hooks + MCP search). Install manually with `npx claude-mem install` — Ace does not bundle the source.",
+      "source": "external",
+      "sourceUrl": "https://github.com/thedotmack/claude-mem",
+      "provenance": "external",
+      "agentCompatibility": "claude-only",
+      "kind": "plugin",
+      "iconUrl": "",
+      "brandColor": "#d4a574",
+      "defaultPrompt": "Install the claude-mem plugin via `npx claude-mem install`. This is a Claude Code plugin (hooks + MCP), not a plain SKILL.md, and only runs under the Claude driver.",
+      "frontmatter": {
+        "name": "claude-mem",
+        "description": "Claude-only persistent memory plugin (hooks + MCP search). Install manually with `npx claude-mem install`."
+      }
+    },
+    {
+      "id": "session-memory-notes",
+      "displayName": "Session Memory Notes",
+      "description": "Driver-agnostic per-task memory hygiene — scratchpad files under .ace/scratch, focused commit subjects, DONE trailer as the contract.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/session-memory-notes",
+      "bundledPath": "assets/skills/session-memory-notes/SKILL.md",
+      "provenance": "bundled",
+      "agentCompatibility": "shared",
+      "kind": "skill",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the session-memory-notes skill for the cross-driver per-task memory pattern (scratchpad, commit subjects, DONE trailer).",
+      "frontmatter": {
+        "name": "session-memory-notes",
+        "description": "Driver-agnostic per-task memory hygiene — scratchpad files under .ace/scratch, focused commit subjects, DONE trailer as the contract."
+      }
+    },
+    {
+      "id": "ace-hermes-router",
+      "displayName": "Ace Hermes Router",
+      "description": "Hermes as the single long-lived manager - ingest the owner's raw brain dump, prompt-enhance it, classify SMALL vs BIG/HUGE, route SMALL to one tight worker and BIG/HUGE to ONE disposable mission-orchestrator, pick the driver, inject its keyword pack, and keep the ace-ops wiki current. Never spawns an orchestra. Never merges.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-hermes-router",
+      "bundledPath": "assets/skills/ace-hermes-router/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-hermes-router skill for its contract before acting.",
+      "frontmatter": {
+        "name": "ace-hermes-router",
+        "description": "Hermes as the single long-lived manager - ingest the owner's raw brain dump, prompt-enhance it, classify SMALL vs BIG/HUGE, route SMALL to one tight worker and BIG/HUGE to ONE disposable mission-orchestrator, pick the driver, inject its keyword pack, and keep the ace-ops wiki current. Never spawns an orchestra. Never merges."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-grill-prd",
+      "displayName": "Ace Grill Prd",
+      "description": "The research + PRD \"grill-me\" agent (Claude). Interrogate the owner until ambiguity is gone, research the codebase, and produce a rigorous scoped PRD (CONTEXT.md-style) so the build worker makes zero scope mistakes. Hand the PRD back to Hermes. End with DONE: <prd path>.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-grill-prd",
+      "bundledPath": "assets/skills/ace-grill-prd/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-grill-prd skill for its contract before acting.",
+      "frontmatter": {
+        "name": "ace-grill-prd",
+        "description": "The research + PRD \"grill-me\" agent (Claude). Interrogate the owner until ambiguity is gone, research the codebase, and produce a rigorous scoped PRD (CONTEXT.md-style) so the build worker makes zero scope mistakes. Hand the PRD back to Hermes. End with DONE: <prd path>."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-merge-train",
+      "displayName": "Ace Merge Train",
+      "description": "Serialize and land a set of open PRs as one merge train: order by dependency, merge main into each branch, resolve conflicts with judgment rules, gate on CI, squash-merge with [skip ci] except the last so exactly ONE dev build fires, handle stacked PRs, close superseded PRs, delete branches, clean worktrees. Use after a BIG/HUGE mission leaves multiple lane PRs, when the owner says 'merge the open PRs', 'run the merge train', 'resolve conflicts and merge to main', or 'create a new build from the open PRs'. Owner-held ship: auto-merge only autoChain missions; otherwise present the ready train.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-merge-train",
+      "bundledPath": "assets/skills/ace-merge-train/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-merge-train skill for its contract before acting.",
+      "frontmatter": {
+        "name": "ace-merge-train",
+        "description": "Serialize and land a set of open PRs as one merge train: order by dependency, merge main into each branch, resolve conflicts with judgment rules, gate on CI, squash-merge with [skip ci] except the last so exactly ONE dev build fires, handle stacked PRs, close superseded PRs, delete branches, clean worktrees. Use after a BIG/HUGE mission leaves multiple lane PRs, when the owner says 'merge the open PRs', 'run the merge train', 'resolve conflicts and merge to main', or 'create a new build from the open PRs'. Owner-held ship: auto-merge only autoChain missions; otherwise present the ready train."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-internal-subagents",
+      "displayName": "Ace Internal Subagents",
+      "description": "How a Ace build worker fans out INTERNALLY inside its single tab — Task tool or dynamic-workflow agent()+pipeline()+parallel() with worktree isolation, 1-level nesting only, sub-worktrees merged back before DONE. Replaces the old \"spawn external Ace agents\" model.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-internal-subagents",
+      "bundledPath": "assets/skills/ace-internal-subagents/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-internal-subagents skill for its contract before acting.",
+      "frontmatter": {
+        "name": "ace-internal-subagents",
+        "description": "How a Ace build worker fans out INTERNALLY inside its single tab — Task tool or dynamic-workflow agent()+pipeline()+parallel() with worktree isolation, 1-level nesting only, sub-worktrees merged back before DONE. Replaces the old \"spawn external Ace agents\" model."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-integration",
+      "displayName": "Ace Integration",
+      "description": "Scoped Ace integration gateway helper for worker PR handoff, current-head checks, and optional gated merge/cleanup when explicitly authorized.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-integration",
+      "bundledPath": "assets/skills/ace-integration/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-integration skill for its contract before acting.",
+      "frontmatter": {
+        "name": "ace-integration",
+        "description": "Scoped Ace integration gateway helper for worker PR handoff, current-head checks, and optional gated merge/cleanup when explicitly authorized."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-validator-worker",
+      "displayName": "Ace Validator Worker",
+      "description": "Single read-only reviewer for a build worker's PR. No spawning. Grade the diff against the PRD acceptance criteria across optional rubric scopes and emit exactly one verdict - VERDICT PASS or VERDICT REQUEST-CHANGES.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-validator-worker",
+      "bundledPath": "assets/skills/ace-validator-worker/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-validator-worker skill for its contract before acting.",
+      "frontmatter": {
+        "name": "ace-validator-worker",
+        "description": "Single read-only reviewer for a build worker's PR. No spawning. Grade the diff against the PRD acceptance criteria across optional rubric scopes and emit exactly one verdict - VERDICT PASS or VERDICT REQUEST-CHANGES."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-worker-brief-writing",
+      "displayName": "Ace Worker Brief Writing",
+      "description": "Write a tight brief/TaskSpec for a single EXTERNAL Ace build worker - the 4-field skeleton, capability-card prompt doctrine, skill routing, referenced skill ids, and compact driver hints.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-worker-brief-writing",
+      "bundledPath": "assets/skills/ace-worker-brief-writing/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-worker-brief-writing skill for its contract before acting.",
+      "frontmatter": {
+        "name": "ace-worker-brief-writing",
+        "description": "Write a tight brief/TaskSpec for a single EXTERNAL Ace build worker - the 4-field skeleton, capability-card prompt doctrine, skill routing, referenced skill ids, and compact driver hints."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-prompt-frontend-build",
+      "displayName": "Ace Prompt: Frontend Build",
+      "description": "Type-specific prompt enhancer for FRONTEND / UI / website / web-app build goals — pins design system, motion discipline, accessibility, and a REAL build gate while leaving layout open. Routes to Claude at xhigh/ultracode.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-prompt-frontend-build",
+      "bundledPath": "assets/skills/ace-prompt-frontend-build/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-prompt-frontend-build skill before crafting a frontend/UI worker brief.",
+      "frontmatter": {
+        "name": "ace-prompt-frontend-build",
+        "description": "Type-specific prompt enhancer for FRONTEND / UI / website / landing-page / web-app build goals; pins design system, motion, accessibility, and a real build gate; routes to Claude at xhigh/ultracode."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-prompt-backend-api",
+      "displayName": "Ace Prompt: Backend / API",
+      "description": "Type-specific prompt enhancer for BACKEND / API / SERVICE / PIPELINE / data-model goals — pins the interface contract, migration safety, boundary-only error handling, backward compatibility, and a real test+build gate. Routes to Codex at xhigh.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-prompt-backend-api",
+      "bundledPath": "assets/skills/ace-prompt-backend-api/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-prompt-backend-api skill before crafting a backend/API worker brief.",
+      "frontmatter": {
+        "name": "ace-prompt-backend-api",
+        "description": "Type-specific prompt enhancer for BACKEND / API / SERVICE / PIPELINE / data-model goals; pins the contract, migration safety, backward compatibility, and a real test+build gate; routes to Codex at xhigh."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-prompt-refactor-migration",
+      "displayName": "Ace Prompt: Refactor / Migration",
+      "description": "Type-specific prompt enhancer for large MECHANICAL REFACTOR and DATA/SCHEMA/FORMAT/VERSION MIGRATION goals — pins the old→new mapping, behavior-preservation, complete-site-sweep, and reversible/idempotent migration. Routes to Codex at xhigh.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-prompt-refactor-migration",
+      "bundledPath": "assets/skills/ace-prompt-refactor-migration/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-prompt-refactor-migration skill before crafting a refactor/migration worker brief.",
+      "frontmatter": {
+        "name": "ace-prompt-refactor-migration",
+        "description": "Type-specific prompt enhancer for large mechanical refactor and data/schema/format/version migration goals; pins behavior-preservation, complete-sweep, and reversible/idempotent migration; routes to Codex at xhigh."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-prompt-bugfix-debug",
+      "displayName": "Ace Prompt: Bugfix / Debug",
+      "description": "Type-specific prompt enhancer for BUG-FIX / HARD-DEBUG / UNKNOWN-ROOT-CAUSE goals — pins exact repro, a reproducing test, root-cause naming, and a minimal surgical diff while leaving the hypothesis open. Routes to Claude at xhigh/ultracode.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-prompt-bugfix-debug",
+      "bundledPath": "assets/skills/ace-prompt-bugfix-debug/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-prompt-bugfix-debug skill before crafting a bug/debug worker brief.",
+      "frontmatter": {
+        "name": "ace-prompt-bugfix-debug",
+        "description": "Type-specific prompt enhancer for bug-fix / hard-debug / unknown-root-cause goals; pins repro, a reproducing test, root-cause naming, and a minimal diff; routes to Claude at xhigh/ultracode."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-prompt-research-planning",
+      "displayName": "Ace Prompt: Research / Planning",
+      "description": "Type-specific prompt enhancer for no-code RESEARCH / PLANNING / PRD / DOCS / ANALYSIS goals — pins the precise question, what a good answer contains, scope/sources, output structure, and surfaced tradeoffs. Routes to Claude (no-code).",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-prompt-research-planning",
+      "bundledPath": "assets/skills/ace-prompt-research-planning/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-prompt-research-planning skill before crafting a research/planning/PRD brief.",
+      "frontmatter": {
+        "name": "ace-prompt-research-planning",
+        "description": "Type-specific prompt enhancer for no-code research / planning / PRD / docs / analysis goals; pins the question, good-answer shape, scope/sources, and surfaced tradeoffs; routes to Claude."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "mp-grill-with-docs",
+      "displayName": "Mp Grill With Docs",
+      "description": "Primary glossary-aware PRD-grilling session (Matt Pocock \"grill-with-docs\"). Interview the owner relentlessly about a plan, stress-test it against the ace-ops wiki glossary and ADRs, sharpen terminology, and update the wiki inline as decisions crystallise. Use to harden a BIG-routed brain dump before a PRD exists.",
+      "source": "matt-pocock",
+      "sourceUrl": "https://github.com/mattpocock/skills",
+      "bundledPath": "assets/skills/mp-grill-with-docs/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the mp-grill-with-docs skill for its contract before acting.",
+      "frontmatter": {
+        "name": "mp-grill-with-docs",
+        "description": "Primary glossary-aware PRD-grilling session (Matt Pocock \"grill-with-docs\"). Interview the owner relentlessly about a plan, stress-test it against the ace-ops wiki glossary and ADRs, sharpen terminology, and update the wiki inline as decisions crystallise. Use to harden a BIG-routed brain dump before a PRD exists."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "mp-grill-me",
+      "displayName": "Mp Grill Me",
+      "description": "No-glossary fallback grilling (Matt Pocock \"grill-me\"). Interview the owner relentlessly about a plan or design until shared understanding, resolving each branch of the decision tree. Use when stress-testing a plan and no ace-ops wiki glossary exists yet, or for a quick grill before mp-grill-with-docs.",
+      "source": "matt-pocock",
+      "sourceUrl": "https://github.com/mattpocock/skills",
+      "bundledPath": "assets/skills/mp-grill-me/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the mp-grill-me skill for its contract before acting.",
+      "frontmatter": {
+        "name": "mp-grill-me",
+        "description": "No-glossary fallback grilling (Matt Pocock \"grill-me\"). Interview the owner relentlessly about a plan or design until shared understanding, resolving each branch of the decision tree. Use when stress-testing a plan and no ace-ops wiki glossary exists yet, or for a quick grill before mp-grill-with-docs."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "mp-to-prd",
+      "displayName": "Mp To Prd",
+      "description": "Brain-dump / conversation context to PRD (Matt Pocock \"to-prd\"). Synthesize the current context into a Product Requirements Document and post it as a Mission Board card — no fresh interview. Use after mp-grill-with-docs / mp-grill-me to turn shared understanding into a PRD.",
+      "source": "matt-pocock",
+      "sourceUrl": "https://github.com/mattpocock/skills",
+      "bundledPath": "assets/skills/mp-to-prd/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the mp-to-prd skill for its contract before acting.",
+      "frontmatter": {
+        "name": "mp-to-prd",
+        "description": "Brain-dump / conversation context to PRD (Matt Pocock \"to-prd\"). Synthesize the current context into a Product Requirements Document and post it as a Mission Board card — no fresh interview. Use after mp-grill-with-docs / mp-grill-me to turn shared understanding into a PRD."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "mp-to-issues",
+      "displayName": "Mp To Issues",
+      "description": "PRD / plan to sliced Mission Board cards (Matt Pocock \"to-issues\"). Break a plan, spec, or PRD into independently-grabbable tracer-bullet vertical slices, tag each AFK (safe for unattended worker handoff) or HITL (hold for owner), and post them as Mission Board cards in dependency order. Use to convert an approved PRD into buildable work.",
+      "source": "matt-pocock",
+      "sourceUrl": "https://github.com/mattpocock/skills",
+      "bundledPath": "assets/skills/mp-to-issues/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the mp-to-issues skill for its contract before acting.",
+      "frontmatter": {
+        "name": "mp-to-issues",
+        "description": "PRD / plan to sliced Mission Board cards (Matt Pocock \"to-issues\"). Break a plan, spec, or PRD into independently-grabbable tracer-bullet vertical slices, tag each AFK (safe for unattended worker handoff) or HITL (hold for owner), and post them as Mission Board cards in dependency order. Use to convert an approved PRD into buildable work."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "mp-tdd",
+      "displayName": "Mp Tdd",
+      "description": "Test-first build contract and test-quality rubric (Matt Pocock \"tdd\"). Red-green-refactor in vertical tracer-bullet slices; tests verify behavior through public interfaces, never implementation. Use when a worker builds a feature or fixes a bug test-first, or needs a rubric for whether tests are good.",
+      "source": "matt-pocock",
+      "sourceUrl": "https://github.com/mattpocock/skills",
+      "bundledPath": "assets/skills/mp-tdd/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the mp-tdd skill for its contract before acting.",
+      "frontmatter": {
+        "name": "mp-tdd",
+        "description": "Test-first build contract and test-quality rubric (Matt Pocock \"tdd\"). Red-green-refactor in vertical tracer-bullet slices; tests verify behavior through public interfaces, never implementation. Use when a worker builds a feature or fixes a bug test-first, or needs a rubric for whether tests are good."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "mp-diagnose",
+      "displayName": "Mp Diagnose",
+      "description": "Systematic debugging and regression discipline (Matt Pocock \"diagnose\"). A six-phase loop for hard bugs and perf regressions — build a feedback loop, reproduce, hypothesise, instrument, fix + regression-test, cleanup + post-mortem. Use when a worker is debugging a non-trivial bug or a regression.",
+      "source": "matt-pocock",
+      "sourceUrl": "https://github.com/mattpocock/skills",
+      "bundledPath": "assets/skills/mp-diagnose/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the mp-diagnose skill for its contract before acting.",
+      "frontmatter": {
+        "name": "mp-diagnose",
+        "description": "Systematic debugging and regression discipline (Matt Pocock \"diagnose\"). A six-phase loop for hard bugs and perf regressions — build a feedback loop, reproduce, hypothesise, instrument, fix + regression-test, cleanup + post-mortem. Use when a worker is debugging a non-trivial bug or a regression."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "mp-handoff",
+      "displayName": "Mp Handoff",
+      "description": "Cross-agent context transfer (Matt Pocock \"handoff\"). Compact the current conversation into a handoff document so a fresh Ace agent (worker, internal sub-agent, or next-tab) can continue the work without re-deriving context. Use before handing a task to another agent or ending a long session.",
+      "source": "matt-pocock",
+      "sourceUrl": "https://github.com/mattpocock/skills",
+      "bundledPath": "assets/skills/mp-handoff/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the mp-handoff skill for its contract before acting.",
+      "frontmatter": {
+        "name": "mp-handoff",
+        "description": "Cross-agent context transfer (Matt Pocock \"handoff\"). Compact the current conversation into a handoff document so a fresh Ace agent (worker, internal sub-agent, or next-tab) can continue the work without re-deriving context. Use before handing a task to another agent or ending a long session."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "mp-caveman",
+      "displayName": "Mp Caveman",
+      "description": "Token-cheap terse communication mode (Matt Pocock \"caveman\"). Ultra-compressed responses that cut token usage ~75% by dropping filler/articles/pleasantries while keeping full technical accuracy. Use when an owner or orchestrator wants minimal-token status, or for high-volume agent-to-agent chatter.",
+      "source": "matt-pocock",
+      "sourceUrl": "https://github.com/mattpocock/skills",
+      "bundledPath": "assets/skills/mp-caveman/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the mp-caveman skill for its contract before acting.",
+      "frontmatter": {
+        "name": "mp-caveman",
+        "description": "Token-cheap terse communication mode (Matt Pocock \"caveman\"). Ultra-compressed responses that cut token usage ~75% by dropping filler/articles/pleasantries while keeping full technical accuracy. Use when an owner or orchestrator wants minimal-token status, or for high-volume agent-to-agent chatter."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-github",
+      "displayName": "Ace GitHub management",
+      "description": "Ace's own GitHub management — solo-hardened single-owner trunk tuned for low merge latency. The compact operational playbook every Ace worker/validator/orchestrator loads to push, gate, and merge without re-deriving. Self-sufficient for common ops; defers enterprise/Cloudflare/scaffolding to ace-github-flow.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-github",
+      "bundledPath": "assets/skills/ace-github/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-github skill — the solo-hardened, low-latency GitHub workflow for this repo: the risk→review→Clawpatch gate matrix, two-tier CI, gateway-serialized auto-rebase for concurrent PRs, and stamping risk+clawpatchRequired into spawned sub-agent specs.",
+      "frontmatter": {
+        "name": "ace-github",
+        "description": "Ace's own GitHub management — solo-hardened single-owner trunk tuned for low merge latency. The compact operational playbook every Ace worker/validator/orchestrator loads to push, gate, and merge without re-deriving. Self-sufficient for common ops; defers enterprise/Cloudflare/scaffolding to ace-github-flow."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-spine-driver",
+      "displayName": "Ace Spine Driver",
+      "description": "Operator guide for driving the Run-Ledger autonomy spine. Two commands: `ace run submit` (mint + dispatch a real run) and `ace run board --json` (read-only watcher). Merge is fail-closed and owner-token gated. The mission CLI is retired.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-spine-driver",
+      "bundledPath": "assets/skills/ace-spine-driver/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-spine-driver skill before driving the run-ledger spine (ace run submit / run board).",
+      "frontmatter": {
+        "name": "ace-spine-driver",
+        "description": "Operator guide for driving the Run-Ledger spine: run submit (drive) + run board (observe); fail-closed owner-gated merge; mission CLI retired."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-run-ledger",
+      "displayName": "Ace Run-Ledger (architecture)",
+      "description": "Architecture doctrine for the Run-Ledger spine-kernel: an append-only event ledger is the single source of truth; the reconciler folds events to the orchestration policy; projections (six-panel + lean board) are pure read-only views. The board is a watcher, never a gate.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-run-ledger",
+      "bundledPath": "assets/skills/ace-run-ledger/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-run-ledger skill for the spine architecture (event ledger = truth, board is a watcher).",
+      "frontmatter": {
+        "name": "ace-run-ledger",
+        "description": "Run-Ledger spine architecture: append-only ledger = truth, pure reconciler + projections, board is a read-only watcher never a gate."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-prompt-enhancer",
+      "displayName": "Ace Prompt Enhancer",
+      "description": "Turn a raw brain dump into a clean, codeword-rich worker brief: restate intent as a tight goal (objective / output / boundaries), pick the driver (Claude vs Codex), inject only the trigger codewords that driver responds to. Routes by goal shape to the type-specific prompt enhancers.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-prompt-enhancer",
+      "bundledPath": "assets/skills/ace-prompt-enhancer/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-prompt-enhancer skill to turn a raw brain dump into a locked-on worker brief.",
+      "frontmatter": {
+        "name": "ace-prompt-enhancer",
+        "description": "Turn a raw brain dump into a locked-on worker brief; pick the driver; route by goal shape to the type-specific prompt enhancers."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    },
+    {
+      "id": "ace-computer-use-validator",
+      "displayName": "Ace Computer-Use Validator",
+      "description": "Computer-use behavioral-test validator: exercises the produced feature in the real built Ace via the `ace browser` CLI and records the completion evidence bundle the merge gate reads. Catches \"CI green but crashed at boot\" failures a diff review misses. Dispatched by the spine for risk-gated runs.",
+      "source": "ace",
+      "sourceUrl": "file://electron/assets/skills/ace-computer-use-validator",
+      "bundledPath": "assets/skills/ace-computer-use-validator/SKILL.md",
+      "iconUrl": "",
+      "brandColor": "#0a0a0a",
+      "defaultPrompt": "Read the ace-computer-use-validator skill to behaviorally test a produced feature in the built app.",
+      "frontmatter": {
+        "name": "ace-computer-use-validator",
+        "description": "Computer-use behavioral-test validator: drive the real feature in the built app, record the evidence bundle the merge gate reads."
+      },
+      "provenance": "bundled",
+      "agentCompatibility": "shared"
+    }
+  ]
+}

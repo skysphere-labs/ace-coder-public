@@ -1,0 +1,96 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-electron/
+release/
+out/
+
+# Vite / TS incremental
+.vite/
+*.tsbuildinfo
+
+# Test coverage
+coverage/
+.wrangler/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Local runtime databases
+ace-transcripts.db
+ace-transcripts.db-*
+
+# Go daemon local build artifact (cross-compiled binaries live in electron/bin/)
+electron/remote-daemon/ace-coder-daemon
+
+# Compiled electron sources — every electron/**/*.cts is transpiled to a
+# sibling .cjs by scripts/compile-electron.cts on `npm run dev` / `build`.
+# Already-committed .cjs files without a .cts sibling remain tracked
+# (gitignore only affects untracked files), so this is safe to enable
+# incrementally as the TS migration progresses.
+electron/**/*.cjs
+# Hand-written test fixture (no .cts sibling; not a compile artifact).
+!electron/__tests__/fixtures/stub-node-pty.cjs
+electron/dist/
+
+# Compiled Ace CLI sources — tools/ace/src/**/*.cts is
+# transpiled to a sibling .cjs by scripts/compile-electron.cts so the
+# packaged bin/ace can require('../src/index.cjs') without a
+# runtime tsx dependency (devDependencies are pruned from the DMG).
+tools/ace/src/**/*.cjs
+tools/ace/src/build-info.json
+tools/ace-tui/src/**/*.cjs
+
+# Stamped by scripts/stamp-build-info.cts (CI release + local package runs)
+electron/build-info.json
+
+# Temporary directories for research
+tmp/
+references/
+
+# Local Ace runtime state / batch worktrees (managed worktrees live
+# outside the repo; this guards against in-repo fallbacks polluting status)
+.ace/
+.agent/
+
+# Private configuration and runtime records never belong in source control
+.env.*
+!.env.example
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+*.pem
+*.key
+*.p12
+*.pfx
+*.log
+*.ndjson
+.wrangler/
+.cloudflare/
+credentials/
+secrets/
+
+# Remote helper binaries are built locally from the Go source.
+electron/bin/ace-coder-daemon-*

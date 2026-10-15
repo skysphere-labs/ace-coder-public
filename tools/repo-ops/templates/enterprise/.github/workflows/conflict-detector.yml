@@ -1,0 +1,29 @@
+name: Conflict detector
+
+# When the base branch moves, re-check open PRs: label + comment the ones that
+# now conflict, with a rebase suggestion, so developers fix conflicts before the
+# owner ever looks at the PR.
+on:
+  push:
+    branches: [main, dev]
+  pull_request_target:
+    types: [synchronize, opened, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  label-conflicts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: eps1lon/actions-label-merge-conflict@v3
+        with:
+          dirtyLabel: has-conflicts
+          removeOnDirtyLabel: ready-to-review
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          commentOnDirty: >
+            ⚠️ This PR now has merge conflicts with its base branch. Please resolve them:
+            `git fetch origin && git rebase origin/$(gh pr view --json baseRefName -q .baseRefName)` —
+            fix the conflicts, then force-push. This label clears automatically once it merges cleanly.
+          commentOnClean: '✅ Conflicts resolved — thanks!'

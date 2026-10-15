@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Ace — Indigo Spade mark (master, v4 2026-07-02).
+       Construction: the SkySphere bird's layered-blade anatomy, re-read as a
+       fanned deck forming a spade. Company indigo on graphite; pip dot echoes the eye. -->
+  <defs>
+    <linearGradient id="gBladeOuter" x1="0" y1="0" x2="0.55" y2="1">
+      <stop offset="0" stop-color="#C3CCF8"/><stop offset="1" stop-color="#6673E4"/>
+    </linearGradient>
+    <linearGradient id="gBladeMid" x1="0" y1="0" x2="0.5" y2="1">
+      <stop offset="0" stop-color="#8B97EE"/><stop offset="1" stop-color="#4A52C0"/>
+    </linearGradient>
+    <linearGradient id="gBladeIn" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#4A52C0"/><stop offset="1" stop-color="#31368A"/>
+    </linearGradient>
+    <linearGradient id="gBody" x1="0.2" y1="0" x2="0.55" y2="1">
+      <stop offset="0" stop-color="#9FAAF2"/><stop offset="0.55" stop-color="#5A64D6"/><stop offset="1" stop-color="#3A40A0"/>
+    </linearGradient>
+    <linearGradient id="gTail" x1="0" y1="0" x2="0.7" y2="1">
+      <stop offset="0" stop-color="#3A40A0"/><stop offset="1" stop-color="#232868"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#gTail)" d="M 252 314 C 258 384, 294 432, 356 452 C 304 458, 240 442, 222 392 C 213 360, 230 332, 252 314 Z"/>
+  <path fill="url(#gBody)" d="M 256 64 C 320 128, 396 200, 416 278 C 428 334, 392 372, 344 368 C 310 364, 282 346, 258 320 C 228 284, 222 162, 256 64 Z"/>
+  <path fill="url(#gBladeOuter)" d="M 252 66 C 180 118, 106 194, 94 280 C 86 338, 120 372, 164 368 C 188 366, 208 354, 222 340 C 204 342, 190 344, 172 344 C 138 346, 112 320, 118 276 C 128 200, 190 124, 252 66 Z"/>
+  <path fill="url(#gBladeMid)" d="M 244 88 C 188 134, 152 200, 152 262 C 152 308, 174 338, 210 346 C 184 332, 170 304, 172 262 C 174 208, 204 140, 244 88 Z"/>
+  <path fill="url(#gBladeIn)" d="M 250 96 C 216 140, 198 200, 202 252 C 205 288, 224 310, 248 320 C 232 302, 220 282, 218 252 C 215 205, 228 148, 250 96 Z"/>
+  <circle cx="342" cy="268" r="11" fill="#EEF1FC"/>
+</svg>

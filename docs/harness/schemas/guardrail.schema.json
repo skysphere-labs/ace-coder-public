@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ace.local/schemas/guardrail.schema.json",
+  "title": "Guardrail",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "id", "appliesTo", "match", "decision", "message"],
+  "properties": {
+    "schema": { "const": "ace.guardrail.v1" },
+    "id": { "type": "string", "minLength": 1 },
+    "appliesTo": { "type": "string", "enum": ["input", "tool-call", "tool-result", "output", "handoff"] },
+    "match": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "taskType": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "tool": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "path": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "regex": { "type": "string", "minLength": 1 }
+      }
+    },
+    "decision": { "type": "string", "enum": ["allow", "deny", "ask", "fixback"] },
+    "message": { "type": "string", "minLength": 1 }
+  }
+}

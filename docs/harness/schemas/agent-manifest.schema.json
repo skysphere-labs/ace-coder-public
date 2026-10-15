@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ace.local/schemas/agent-manifest.schema.json",
+  "title": "AgentManifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "id", "role", "provider", "purpose"],
+  "properties": {
+    "schema": { "const": "ace.agent_manifest.v1" },
+    "id": { "type": "string", "minLength": 1 },
+    "role": { "type": "string", "enum": ["orchestrator", "builder", "planner", "evaluator", "validator-fixer-merger", "reviewer", "auditor", "memory", "wiki-curator"] },
+    "provider": { "type": "string", "enum": ["hermes", "codex", "claude", "cursor", "gemini"] },
+    "purpose": { "type": "string", "minLength": 1 },
+    "allowedActions": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "forbiddenActions": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  }
+}

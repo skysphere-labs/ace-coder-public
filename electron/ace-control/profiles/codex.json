@@ -1,0 +1,39 @@
+{
+  "id": "codex",
+  "name": "Codex",
+  "detect": { "agent": "codex", "argv": ["codex"], "banner": "OpenAI Codex" },
+  "runtimeProfiles": {
+    "app-parity": {
+      "label": "Codex app-parity",
+      "features": ["apps", "plugins", "browser_use", "browser_use_external", "computer_use", "in_app_browser", "enable_mcp_apps"],
+      "readiness": ["app-server", "plugin-surface", "computer-use-tools"]
+    }
+  },
+  "ready": { "pattern": "^\\s*\u203a(?:\\s|$)|^(?:>|user:|codex>)\\s*$|^\\s*>\\s*$" },
+  "busy": { "pattern": "Thinking|Running|tool:|tokens used|Working\\.\\.\\." },
+  "approval": { "pattern": "Allow Codex to|Approve this|\\[y/N\\]|Apply patch\\?" },
+  "error": { "pattern": "^(?:Error|Fatal|ERROR):|\\bcontext_length_exceeded\\b|\\b[Cc]ontext (?:length|window) (?:exceeded|exhausted)\\b|\\b(?:[Yy]our )?input exceeds the context window\\b|\\bexceeds the context window\\b|\\b[Mm]aximum context length\\b|\\b[Ee]xceeded the model context\\b|\\b[Cc]ontext (?:compaction|compression) failed\\b|\\b[Ff]ailed to (?:compact|compress) context\\b" },
+  "turnComplete": { "pattern": "^\\s*\u203a(?:\\s|$)|^(?:>|codex>)\\s*$" },
+  "submit": "enter",
+  "abort": { "key": "ctrl+c", "repeat": 1 },
+  "multiline": "shift+enter",
+  "slash": ["clear", "help", "status", "model", "approvals", "compact"],
+  "fileRef": "@",
+  "turns": {
+    "userStart": "^(?:user:|>)\\s",
+    "agentStart": "^(?:assistant:|codex:)",
+    "toolCall": "^tool:",
+    "diff": "^[+\\-] "
+  },
+  "transcript": {
+    "kind": "jsonl-append",
+    "sessionGlob": "~/.codex/sessions/**/rollout-*.jsonl",
+    "matchByCwdField": "payload.cwd"
+  },
+  "composer": {
+    "placeholders": {
+      "default": "Message Codex",
+      "busy": "Codex is working… (Esc to interrupt)"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "profile": "claude-code",
+  "description": "booting -> awaiting-input on Claude Code prompt-ready placeholder screen",
+  "frames": [
+    { "type": "expect-state", "state": "booting" },
+    {
+      "type": "data",
+      "chunk": " ▐▛███▜▌   Claude Code v2.1.132\r\n▝▜█████▛▘  Opus 4.7 (1M context) with high effort · Claude Max\r\n  ▘▘ ▝▝    ~/Projects/Ace\r\n\r\n────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\r\n❯ Try \"create a util logging.py that...\"\r\n────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\r\n  ⏵⏵ bypass permissions on (shift+tab to cycle)\r\n"
+    },
+    { "type": "expect-state", "state": "awaiting-input" }
+  ]
+}

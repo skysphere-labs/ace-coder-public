@@ -1,0 +1,8 @@
+{
+  "schema": "ace.app.build-info.v1",
+  "version": "0.1.0-dev.59",
+  "channel": "dev",
+  "gitSha": "a251ea234256080a8ad78f0a543e71fe0c10e198",
+  "gitShortSha": "a251ea2",
+  "builtAt": "2026-06-09T15:14:24.706Z"
+}

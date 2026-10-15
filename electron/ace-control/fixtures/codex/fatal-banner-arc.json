@@ -1,0 +1,15 @@
+{
+  "profile": "codex",
+  "description": "a genuine top-level fatal banner (line starting with 'Error:' or 'Fatal:') must still trip state=error",
+  "frames": [
+    { "type": "expect-state", "state": "booting" },
+    { "type": "data", "chunk": "OpenAI Codex\r\nConnected.\r\n\r\n> \r\n" },
+    { "type": "expect-state", "state": "awaiting-input" },
+    { "type": "submit" },
+    { "type": "data", "chunk": "user: break it\r\n" },
+    { "type": "data", "chunk": "Thinking...\r\n" },
+    { "type": "expect-state", "state": "busy" },
+    { "type": "data", "chunk": "Error: unable to contact model endpoint\r\n" },
+    { "type": "expect-state", "state": "error" }
+  ]
+}

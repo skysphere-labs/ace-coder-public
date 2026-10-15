@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ace.local/schemas/trace-event.schema.json",
+  "title": "TraceEvent",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "eventId", "handoffId", "seq", "parentEventId", "streamId", "agent", "type", "at", "payload"],
+  "properties": {
+    "schema": { "const": "ace.trace_event.v1" },
+    "eventId": { "type": "string", "minLength": 1 },
+    "handoffId": { "type": "string", "minLength": 1 },
+    "seq": { "type": "integer", "minimum": 0 },
+    "parentEventId": { "type": ["string", "null"] },
+    "streamId": { "type": "string", "minLength": 1 },
+    "agent": { "type": "string", "minLength": 1 },
+    "type": {
+      "type": "string",
+      "enum": ["spawn", "envelope", "prompt", "turn-start", "tool-call", "tool-result", "approval-requested", "approval-answered", "turn-complete", "done", "blocked", "abort", "error"]
+    },
+    "at": { "type": "string", "format": "date-time" },
+    "monoNs": { "type": "integer", "minimum": 0 },
+    "payload": { "type": "object" },
+    "truncation": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["field", "originalBytes", "keptBytes"],
+      "properties": {
+        "field": { "type": "string", "minLength": 1 },
+        "originalBytes": { "type": "integer", "minimum": 0 },
+        "keptBytes": { "type": "integer", "minimum": 0 }
+      }
+    }
+  }
+}

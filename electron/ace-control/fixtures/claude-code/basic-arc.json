@@ -1,0 +1,22 @@
+{
+  "profile": "claude-code",
+  "description": "spawn -> awaiting-input -> busy -> awaiting-approval -> busy -> turn-complete",
+  "frames": [
+    { "type": "expect-state", "state": "booting" },
+    { "type": "data", "chunk": "Claude Code v2.5.0\r\nWelcome to Claude Code. Working in /tmp\r\n\r\n\u276f \r\n" },
+    { "type": "expect-state", "state": "awaiting-input" },
+    { "type": "submit" },
+    { "type": "data", "chunk": "\u276f write hello world\r\n" },
+    { "type": "data", "chunk": "\u273b Thinking...\r\n" },
+    { "type": "expect-state", "state": "busy" },
+    { "type": "data", "chunk": "Running Bash tool...\r\n" },
+    { "type": "expect-state", "state": "busy" },
+    { "type": "data", "chunk": "Do you want to proceed with `echo hello > /tmp/hi.txt`?\r\n1. Yes\r\n2. No\r\n" },
+    { "type": "expect-state", "state": "awaiting-approval" },
+    { "type": "approve" },
+    { "type": "data", "chunk": "y\r\n\u273b Running...\r\n" },
+    { "type": "expect-state", "state": "busy" },
+    { "type": "data", "chunk": "\u23fa Wrote /tmp/hi.txt.\r\n\r\n\u276f \r\n" },
+    { "type": "expect-state", "state": "turn-complete" }
+  ]
+}

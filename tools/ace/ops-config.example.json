@@ -1,0 +1,15 @@
+{
+  "schema": "ace.ops-config.v1",
+  "enabled": false,
+  "endpoints": [],
+  "thresholds": {
+    "fdRatioWarning": 0.7,
+    "fdRatioCritical": 0.9,
+    "dbSizeWarnMb": 500,
+    "dbSizeCritMb": 1000,
+    "walSizeWarnMb": 200,
+    "walSizeCritMb": 500,
+    "snapshotFreshSeconds": 21600,
+    "snapshotStaleSeconds": 86400
+  }
+}

@@ -1,0 +1,35 @@
+name: PR summary (owner review)
+
+# Posts ONE paragraph for the owner: what the PR does, whether it's safe to
+# merge, and rubric compliance. Requires the free anthropics/claude-code-action
+# plus an ANTHROPIC_API_KEY secret; without the key the step is skipped so the
+# workflow stays valid.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+  id-token: write
+
+jobs:
+  summary:
+    runs-on: ubuntu-latest
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Claude one-paragraph review
+        if: env.ANTHROPIC_API_KEY != ''
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: >
+            Read RUBRIC.md and the PR diff. Post exactly ONE concise paragraph (<=120 words,
+            no code blocks) addressed to the repo owner with three parts: (1) What this PR does,
+            (2) Is it safe to merge — build, security, and scope, (3) Rubric compliance — which
+            hard gates pass or fail. End with a clear SAFE TO MERGE: yes/no.
+      - name: Config-only notice
+        if: env.ANTHROPIC_API_KEY == ''
+        run: echo "ANTHROPIC_API_KEY not set — one-paragraph PR summary skipped (workflow validated only)."

@@ -1,0 +1,22 @@
+{
+  "profile": "gemini",
+  "description": "spawn -> awaiting-input -> busy -> awaiting-approval -> busy -> turn-complete",
+  "frames": [
+    { "type": "expect-state", "state": "booting" },
+    { "type": "data", "chunk": "GEMINI CLI v1.0\r\nReady.\r\n\r\n> \r\n" },
+    { "type": "expect-state", "state": "awaiting-input" },
+    { "type": "submit" },
+    { "type": "data", "chunk": "> write hello world\r\n" },
+    { "type": "data", "chunk": "Processing your request...\r\n" },
+    { "type": "expect-state", "state": "busy" },
+    { "type": "data", "chunk": "Running tool\r\n" },
+    { "type": "expect-state", "state": "busy" },
+    { "type": "data", "chunk": "Apply changes to /tmp/hi.txt? [Y/n] " },
+    { "type": "expect-state", "state": "awaiting-approval" },
+    { "type": "approve" },
+    { "type": "data", "chunk": "y\r\nRunning...\r\n" },
+    { "type": "expect-state", "state": "busy" },
+    { "type": "data", "chunk": "Done.\r\n> \r\n" },
+    { "type": "expect-state", "state": "turn-complete" }
+  ]
+}

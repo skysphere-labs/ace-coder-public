@@ -1,0 +1,22 @@
+{
+  "profile": "codex",
+  "description": "spawn -> awaiting-input -> busy -> awaiting-approval -> busy -> turn-complete",
+  "frames": [
+    { "type": "expect-state", "state": "booting" },
+    { "type": "data", "chunk": "OpenAI Codex\r\nConnected.\r\n\r\n> \r\n" },
+    { "type": "expect-state", "state": "awaiting-input" },
+    { "type": "submit" },
+    { "type": "data", "chunk": "user: write hello world\r\n" },
+    { "type": "data", "chunk": "Thinking about the request...\r\n" },
+    { "type": "expect-state", "state": "busy" },
+    { "type": "data", "chunk": "tool: bash\r\n" },
+    { "type": "expect-state", "state": "busy" },
+    { "type": "data", "chunk": "Allow Codex to run `echo hello > /tmp/hi.txt`? [y/N] " },
+    { "type": "expect-state", "state": "awaiting-approval" },
+    { "type": "approve" },
+    { "type": "data", "chunk": "y\r\nRunning...\r\n" },
+    { "type": "expect-state", "state": "busy" },
+    { "type": "data", "chunk": "done\r\n> \r\n" },
+    { "type": "expect-state", "state": "turn-complete" }
+  ]
+}

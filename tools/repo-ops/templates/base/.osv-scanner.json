@@ -1,0 +1,5 @@
+{
+  "//": "OSV-Scanner config. Add IgnoredVulns entries (with an expiry + reason) only after a documented risk decision.",
+  "PackageOverrides": [],
+  "IgnoredVulns": []
+}

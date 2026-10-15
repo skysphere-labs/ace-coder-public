@@ -1,0 +1,38 @@
+{
+  "id": "claude-code",
+  "name": "Claude Code",
+  "detect": { "agent": "claude", "argv": ["claude"], "banner": "Claude Code" },
+  "ready": { "pattern": "(?:^|\\n)[ \\t\\u00a0]*(?:│[ \\t\\u00a0]*)?[❯>](?:(?:[ \\t\\u00a0]*▌?[ \\t\\u00a0]*)|(?:[ \\t\\u00a0]+▌?[ \\t\\u00a0]*Try \"[^\"\\n]*\"[ \\t\\u00a0]*))(?:│[ \\t\\u00a0]*)?(?=\\n|$)" },
+  "busy": { "pattern": "[\u2728\u273b\u273d\u2733\u2736\u2737\u2734]|\\b\\w{3,}ing\u2026|esc to interrupt|esc\\s*\\(interrupt\\)" },
+  "approval": { "pattern": "Do you want to (?:create|edit|run|proceed|apply|overwrite|delete|replace|move|allow)|Yes, and don't ask again|\\b1\\.\\s+Yes\\b[\\s\\S]{0,400}\\b\\d+\\.\\s+No\\b" },
+  "error": { "pattern": "^(?:Error|Fatal):|✘\\s" },
+  "turnComplete": { "pattern": "(?:^|\\n)[ \\t\\u00a0]*(?:│[ \\t\\u00a0]*)?[❯>](?:(?:[ \\t\\u00a0]*▌?[ \\t\\u00a0]*)|(?:[ \\t\\u00a0]+▌?[ \\t\\u00a0]*Try \"[^\"\\n]*\"[ \\t\\u00a0]*))(?:│[ \\t\\u00a0]*)?(?=\\n|$)" },
+  "submit": "enter",
+  "abort": { "key": "esc", "repeat": 1 },
+  "multiline": "shift+enter",
+  "slash": ["clear", "compact", "model", "cost", "resume", "rewind", "help", "status"],
+  "fileRef": "@",
+  "turns": {
+    "userStart": "^>\\s",
+    "agentStart": "^✻",
+    "toolCall": "^⏺\\s*(Read|Edit|Write|Bash|Grep|Glob|Task)\\(",
+    "diff": "^[+\\-] "
+  },
+  "transcript": {
+    "kind": "jsonl-append",
+    "sessionGlob": "~/.claude/projects/*/*.jsonl",
+    "sessionIdFrom": "filename",
+    "matchBySessionId": true,
+    "linkWindowMs": 86400000
+  },
+  "composer": {
+    "placeholders": {
+      "default": "Message Claude",
+      "busy": "Claude is working… (Esc to interrupt)"
+    }
+  },
+  "streamJson": {
+    "supported": true,
+    "permissionModes": ["default", "acceptEdits", "plan", "bypassPermissions"]
+  }
+}

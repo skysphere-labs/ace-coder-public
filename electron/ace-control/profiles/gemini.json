@@ -1,0 +1,35 @@
+{
+  "id": "gemini",
+  "name": "Gemini",
+  "detect": { "agent": "gemini", "argv": ["gemini"], "banner": "GEMINI" },
+  "ready": { "pattern": "Type your message|(?:^|\\n)\\s*>\\s*$" },
+  "busy": { "pattern": "Processing|Thinking|Running|⠋|⠙|⠹|⠸|⠼|⠴|⠦|⠧|⠇|⠏" },
+  "approval": { "pattern": "Allow execution of|Apply changes|Accept\\?|\\[Y/n\\]|Do you want to apply|\\b1\\.\\s+Allow\\b[\\s\\S]{0,400}\\b\\d+\\.\\s+No\\b" },
+  "error": { "pattern": "^(?:Error|Fatal):|✗\\s" },
+  "turnComplete": { "pattern": "Type your message|(?:^|\\n)\\s*>\\s*$" },
+  "submit": "enter",
+  "abort": { "key": "esc", "repeat": 1 },
+  "bracketedPaste": false,
+  "approveYesKey": "enter",
+  "multiline": "shift+enter",
+  "slash": ["clear", "help", "memory", "tools", "stats"],
+  "fileRef": "@",
+  "turns": {
+    "userStart": "^>\\s",
+    "agentStart": "^(?:Gemini:|assistant:)",
+    "toolCall": "^(?:tool:|⏵)",
+    "diff": "^[+\\-] "
+  },
+  "transcript": {
+    "kind": "json-rewrite",
+    "sessionGlob": "~/.gemini/tmp/references/chats/session-*.json",
+    "matchByCwdField": null,
+    "projectHashField": "projectHash"
+  },
+  "composer": {
+    "placeholders": {
+      "default": "Message Gemini",
+      "busy": "Gemini is working… (Esc to interrupt)"
+    }
+  }
+}

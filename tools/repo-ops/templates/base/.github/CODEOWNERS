@@ -1,0 +1,6 @@
+# Required reviewers. The owner gates infra, CI, and the prod path.
+* @{{owner}}
+
+/.github/        @{{owner}}
+/rulesets/       @{{owner}}
+/wrangler.jsonc  @{{owner}}

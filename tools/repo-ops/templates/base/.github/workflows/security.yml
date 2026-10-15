@@ -1,0 +1,41 @@
+name: Security
+
+on:
+  pull_request:
+  push:
+    branches: [main, dev]
+  schedule:
+    - cron: '0 7 * * 1' # weekly Monday 07:00 UTC
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: pnpm audit (high+)
+        run: pnpm audit --audit-level=high
+
+  osv-scanner:
+    # Advisory cross-ecosystem CVE scan. NON-BLOCKING: the hard gate is the
+    # `audit` job (pnpm audit, high+) plus Dependabot. OSV findings (including
+    # low/moderate, e.g. dev-only tooling advisories) surface in the logs so you
+    # can act on them, but they don't fail CI.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: OSV-Scanner (advisory)
+        continue-on-error: true
+        uses: docker://ghcr.io/google/osv-scanner:latest
+        with:
+          args: scan --lockfile=pnpm-lock.yaml ./

@@ -1,0 +1,26 @@
+{
+  "sessionId": "synthetic-session",
+  "projectHash": "synthetic-project",
+  "startTime": "2024-01-01T00:00:00.000Z",
+  "lastUpdated": "2024-01-01T00:00:00.000Z",
+  "messages": [
+    {
+      "id": "synthetic-user",
+      "timestamp": "2024-01-01T00:00:00.000Z",
+      "type": "user",
+      "content": [
+        {
+          "text": "Hello fixture"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-assistant",
+      "timestamp": "2024-01-01T00:00:00.000Z",
+      "type": "gemini",
+      "content": "Synthetic response.",
+      "model": "fixture-model"
+    }
+  ],
+  "kind": "main"
+}

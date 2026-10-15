@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 64" fill="none" role="img" aria-label="Ace">
+  <!-- Indigo Deck wordmark. Space Grotesk with a system sans fallback so it
+       renders without an embedded font; the mark carries the indigo accent. -->
+  <path
+    d="M8 46 L18 20 L28 46"
+    stroke="#6673E4"
+    stroke-width="4.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path d="M12.5 38 L23.5 38" stroke="#6673E4" stroke-width="4.5" stroke-linecap="round" />
+  <text
+    x="44"
+    y="45"
+    font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif"
+    font-size="40"
+    font-weight="600"
+    letter-spacing="-1"
+    fill="#F5F3EF"
+  >Ace</text>
+</svg>

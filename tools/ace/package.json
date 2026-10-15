@@ -1,0 +1,15 @@
+{
+  "name": "ace",
+  "version": "0.2.0",
+  "description": "Drive any Ace agent tab from the command line. Orchestration + stdio MCP server baked in.",
+  "private": true,
+  "bin": {
+    "ace": "./bin/ace"
+  },
+  "main": "./src/index.cjs",
+  "scripts": {
+    "pretest": "tsx ../../scripts/compile-electron.cts",
+    "test": "node --test --require tsx/cjs src/__tests__/*.test.cts"
+  },
+  "license": "Apache-2.0"
+}

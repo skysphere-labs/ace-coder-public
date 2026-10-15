@@ -1,0 +1,21 @@
+{
+  "profile": "codex",
+  "description": "healthy codex turn whose busy output contains incidental 'error:' substrings (tool traces, log noise) must end in turn-complete, not error",
+  "frames": [
+    { "type": "expect-state", "state": "booting" },
+    { "type": "data", "chunk": "OpenAI Codex\r\nConnected.\r\n\r\n> \r\n" },
+    { "type": "expect-state", "state": "awaiting-input" },
+    { "type": "submit" },
+    { "type": "data", "chunk": "user: run the thing\r\n" },
+    { "type": "data", "chunk": "Thinking about the request...\r\n" },
+    { "type": "expect-state", "state": "busy" },
+    { "type": "data", "chunk": "tool: bash\r\n  stream error: EPIPE (ignored)\r\n" },
+    { "type": "expect-state", "state": "busy" },
+    { "type": "data", "chunk": "tool: mcp\r\n  mcp: tool error: transient; retrying\r\n" },
+    { "type": "expect-state", "state": "busy" },
+    { "type": "data", "chunk": "assistant: here is a snippet: 'error: not found' is the expected stderr\r\n" },
+    { "type": "expect-state", "state": "busy" },
+    { "type": "data", "chunk": "DONE: ran the thing\r\n> \r\n" },
+    { "type": "expect-state", "state": "turn-complete" }
+  ]
+}

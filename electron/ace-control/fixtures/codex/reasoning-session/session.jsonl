@@ -1,0 +1,4 @@
+{"timestamp":"2024-01-01T00:00:00.000Z","type":"session_meta","payload":{"id":"synthetic-session","cwd":"/tmp/ace-coder-example","originator":"fixture","model_provider":"openai"}}
+{"timestamp":"2024-01-01T00:00:00.000Z","type":"event_msg","payload":{"type":"task_started","turn_id":"synthetic-turn"}}
+{"timestamp":"2024-01-01T00:00:00.000Z","type":"event_msg","payload":{"type":"agent_reasoning","text":"Synthetic reasoning fixture."}}
+{"timestamp":"2024-01-01T00:00:00.000Z","type":"event_msg","payload":{"type":"turn_finished","turn_id":"synthetic-turn"}}

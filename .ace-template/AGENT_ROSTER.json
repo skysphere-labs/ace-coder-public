@@ -1,0 +1,57 @@
+[
+  {
+    "schema": "ace.agent_manifest.v1",
+    "id": "hermes_orchestrator",
+    "provider": "hermes",
+    "role": "orchestrator",
+    "purpose": "Thin operator, user/status owner, and canonical wiki curator. Creates one bounded GoalAgent and one validator-fixer-merger by default.",
+    "allowedActions": ["read_harness", "plan_simple_task", "spawn_goal_agent", "emit_event", "request_validation", "review_wiki_delta"],
+    "forbiddenActions": ["edit_app_code", "change_worker_outputs", "mark_feature_passed", "spawn_default_waves", "spawn_default_fixback_workers"]
+  },
+  {
+    "schema": "ace.agent_manifest.v1",
+    "id": "codex_builder",
+    "provider": "codex",
+    "role": "builder",
+    "purpose": "Implement code changes in isolated worktrees."
+  },
+  {
+    "schema": "ace.agent_manifest.v1",
+    "id": "claude_planner",
+    "provider": "claude",
+    "role": "planner",
+    "purpose": "Create specs, UI plans, architecture notes, and acceptance criteria."
+  },
+  {
+    "schema": "ace.agent_manifest.v1",
+    "id": "codex_validator_fixer_merger",
+    "provider": "codex",
+    "role": "validator-fixer-merger",
+    "purpose": "Validate exact PR/head, fix ordinary in-scope defects on the same PR, rerun checks, gate, and merge through Ace integration.",
+    "allowedActions": ["read_completion", "run_task_validate", "edit_scoped_pr", "mark_feature", "emit_event", "integrate_gate", "integrate_pr_merge"],
+    "forbiddenActions": ["raw_gh_merge", "open_replacement_pr", "edit_out_of_scope", "spawn_fixback_worker_by_default"]
+  },
+  {
+    "schema": "ace.agent_manifest.v1",
+    "id": "prune_auditor",
+    "provider": "codex",
+    "role": "auditor",
+    "purpose": "Find safe deletion candidates with import, search, and test evidence."
+  },
+  {
+    "schema": "ace.agent_manifest.v1",
+    "id": "hermes_wiki_curator",
+    "provider": "hermes",
+    "role": "wiki-curator",
+    "purpose": "Review evidence dumps and suggested wiki deltas before promoting durable truth to the canonical project wiki.",
+    "allowedActions": ["read_completion", "read_wiki", "write_wiki", "mark_memory_promoted"],
+    "forbiddenActions": ["edit_app_code", "mark_feature_passed_without_evidence"]
+  },
+  {
+    "schema": "ace.agent_manifest.v1",
+    "id": "explicit_fixback_writer",
+    "provider": "claude",
+    "role": "reviewer",
+    "purpose": "Only when explicitly escalated, turn out-of-scope validator failures into precise worker fixback prompts."
+  }
+]

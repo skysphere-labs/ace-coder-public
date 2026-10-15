@@ -1,0 +1,36 @@
+{
+  "id": "hermes",
+  "name": "Hermes Agent",
+  "detect": { "agent": "hermes", "argv": ["hermes"], "banner": "Hermes Agent" },
+  "ready": { "pattern": "(?:^|\\n)[❯>]\\s*(?:▌)?\\s*$" },
+  "busy": { "pattern": "\\b(?:thinking|summoning|forging|starting|working|calling|running)\\b|[░▒▓]|⏲|ctx --|\\[.*?\\]" },
+  "approval": { "pattern": "\\[y/N\\]|\\[Y/n\\]|\\(y/n\\)|Do you want to (?:create|edit|run|proceed|apply|overwrite|delete|replace|move|allow)" },
+  "error": { "pattern": "^(?:Error|Fatal|ERROR):|Traceback \\(most recent call last\\)|\\bcontext_length_exceeded\\b|\\b[Cc]ontext (?:length|window) (?:exceeded|exhausted)\\b|\\b(?:[Yy]our )?input exceeds the context window\\b|\\bexceeds the context window\\b|\\b[Mm]aximum context length\\b|\\b[Ee]xceeded the model context\\b|\\b[Cc]ontext (?:compaction|compression) failed\\b|\\b[Ff]ailed to (?:compact|compress) context\\b" },
+  "turnComplete": { "pattern": "(?:^|\\n)[❯>]\\s*(?:▌)?\\s*$" },
+  "bracketedPaste": false,
+  "submit": "enter",
+  "abort": { "key": "esc", "repeat": 1 },
+  "multiline": "shift+enter",
+  "slash": ["steer", "new", "clear", "reset", "help", "compact", "model", "status", "tools", "skills"],
+  "fileRef": "@",
+  "turns": {
+    "userStart": "^[❯>]\\s",
+    "agentStart": "^⚕|^┊|^\\s*(?:thinking|summoning|forging)",
+    "toolCall": "^┊|tool\\.",
+    "diff": "^[+\\-] "
+  },
+  "transcript": {
+    "kind": "json-rewrite",
+    "sessionGlob": "{userDataPath}/hermes-home*/sessions/session_*.json",
+    "matchByCwdField": null,
+    "matchByWorkspaceHome": true,
+    "linkWindowMs": 600000,
+    "allowExistingSessionFiles": true
+  },
+  "composer": {
+    "placeholders": {
+      "default": "Message Hermes",
+      "busy": "Hermes is working…"
+    }
+  }
+}
