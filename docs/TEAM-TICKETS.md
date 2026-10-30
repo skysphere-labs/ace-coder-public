@@ -5,6 +5,27 @@ service to a local coding task. Search, open a ticket, review its context, then
 choose a project and an installed agent. The connector reads tickets; it does
 not post comments, transition issues, or change assignments in the source board.
 
+## How a team uses it
+
+Each developer runs their own Skysphere ACE CODER desktop installation and
+connects to the team's Jira site or in-house board with their own credentials.
+The board remains the shared source of tickets; local connections, tasks, and
+agent sessions are not automatically synchronized between computers. Existing
+board permissions determine which tickets each person can read.
+
+Before launching a ticket, add the relevant local repository to Skysphere ACE
+CODER and install and authenticate the coding-agent CLI you want to use. The
+connector creates a task and launches that installed CLI with the reviewed
+ticket context; it does not install an agent or generate a new CLI application.
+The launch screen explicitly asks for the project and agent, so the ticket
+cannot choose a local repository on the developer's behalf.
+
+A typical flow is **team ticket → reviewed context → local project and agent →
+CLI session/worktree → reviewed code change**. Developers can search their own
+queue with JQL such as `assignee = currentUser() AND statusCategory != Done
+ORDER BY updated DESC`. Use the source board for assignments, comments, and
+status changes; this connector has no unattended polling or two-way board sync.
+
 ## Connect Jira Cloud
 
 1. Choose **Tickets → Add connection → Jira Cloud**.
@@ -54,6 +75,8 @@ Your Jira version and administrator policy must support PAT authentication.
 Choose **JSON board** and supply its API base URL, such as
 `https://tickets.example.com/api`. Optionally provide a Bearer token. The
 service must implement these read-only endpoints; it does not need Jira.
+An existing board with a different API needs a small adapter that exposes this
+contract. Supplying an arbitrary board's homepage or API URL is not sufficient.
 
 | Request | Response |
 | --- | --- |

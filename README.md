@@ -79,13 +79,37 @@ capability groups to their captures or source and explains what was exercised.
 
 ![Hermes chat with fictional messages and an unsent draft](docs/screenshots/hermes-chat.jpg)
 
-## Bring your preferred agents
+## Connect your team's Jira or in-house board
 
-To bring work from an existing board, see the [Jira and team ticket setup guide](docs/TEAM-TICKETS.md).
-Ticket intake runs on the desktop with your own credentials and reads your
-board without changing tickets. You choose when to share the reviewed context
-with a coding agent. The Jira Cloud token flow is intended for personal/internal
-use; review Atlassian's distributed-app requirements before a public rollout.
+Keep planning in the board your team already uses, then bring a reviewed ticket
+into **Skysphere ACE CODER → Tickets → local project → coding-agent CLI**.
+Each team member connects their own desktop installation using their own board
+credentials and permissions. Connections and agent sessions stay local; they
+are not shared automatically between teammates.
+
+1. **Connect a board.** Add Jira Cloud with your email and API token, Jira Data
+   Center with a personal access token, or an in-house service implementing the
+   documented JSON ticket API. Other board APIs need an adapter to that protocol.
+2. **Choose a ticket.** Search Jira with JQL or query your in-house board, then
+   preview the title, description, status, assignee, and labels.
+3. **Launch the work.** Select a local project and an installed, authenticated
+   agent, add an instruction, and optionally use an isolated Git worktree. The
+   app opens a CLI session and sends the reviewed ticket context when it is ready.
+4. **Review the result.** Follow the agent, inspect its diff, and use your normal
+   Git/GitHub workflow. Update the original ticket through your team's board.
+
+The connector reads tickets without changing them. There is no background ticket
+sync, automatic assignment, or status writeback. Tokens are encrypted locally
+and excluded from agent instructions; the ticket context you choose to send may
+reach the agent's model provider. If CLI login or setup is needed, the app keeps
+the context in **Task spec** for you to send after setup.
+
+See the [Jira and team ticket setup guide](docs/TEAM-TICKETS.md) for API setup,
+team onboarding, permissions, and the in-house JSON contract. The Jira Cloud token
+flow is intended for personal/internal use; review Atlassian's distributed-app
+requirements before offering it as a public or commercial integration.
+
+## Bring your preferred agents
 
 The provider catalog contains launch profiles for these **24 CLI agents**:
 

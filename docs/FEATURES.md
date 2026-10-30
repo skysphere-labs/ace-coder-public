@@ -133,6 +133,12 @@ or a JSON ticket service with optional Bearer authentication. Save multiple
 connections, search by JQL or your service's query, page through results, and
 read the ticket's normalized text before choosing what to run.
 
+Team members connect their own desktop installations to the same board using
+their own credentials and board permissions. Tasks and agent sessions run on
+each developer's machine; the connector does not synchronize sessions between
+teammates. In-house boards must implement the documented JSON API or provide an
+adapter to it.
+
 Select a local project and an eligible installed agent, optionally add your
 instruction, then launch the reviewed snapshot in a Git worktree or the project
 directory. The app starts the CLI and submits the context once it is ready.
